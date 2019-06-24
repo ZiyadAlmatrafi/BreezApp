@@ -37,6 +37,4 @@ public class EthernetFragment extends Fragment {
         return v;
     }
 
-
-
 }

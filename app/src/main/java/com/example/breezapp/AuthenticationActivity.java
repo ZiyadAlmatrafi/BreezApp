@@ -14,7 +14,7 @@ public class AuthenticationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authentication);
 
-        button = (Button) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.hub_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
