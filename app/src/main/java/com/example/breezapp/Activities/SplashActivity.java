@@ -1,10 +1,12 @@
-package com.example.breezapp;
+package com.example.breezapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.breezapp.R;
 
 public class SplashActivity extends AppCompatActivity {
     private static int SPLASH = 2000;

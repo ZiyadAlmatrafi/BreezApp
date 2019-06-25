@@ -1,7 +1,6 @@
-package com.example.breezapp;
+package com.example.breezapp.Fragments;
 
-import android.content.Context;
-import android.net.Uri;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,23 +9,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.breezapp.R;
 
-public class HubNotFoundFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class SignUpFragment extends Fragment {
 
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    public SignUpFragment() {
+        // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hub_not_found, container, false);
+        return inflater.inflate(R.layout.fragment_sign_up, container, false);
     }
-
 
 }

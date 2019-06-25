@@ -1,4 +1,4 @@
-package com.example.breezapp;
+package com.example.breezapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.breezapp.R;
 
 public class AuthenticationActivity extends AppCompatActivity {
         Button button;
