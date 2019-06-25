@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/my_home"
         android:title=""
         android:icon="@drawable/ic_home"
         app:showAsAction="always"
@@ -10,20 +11,26 @@
 
     </item>
 
-    <item android:icon="@drawable/ic_beenhere"
+    <item
+        android:id="@+id/routine"
+        android:icon="@drawable/ic_beenhere"
         android:title="">
 
     </item>
     <item
+        android:id="@+id/dashboard"
         android:title=""
         android:icon="@drawable/ic_favorite">
-
     </item>
+
     <item
+        android:id="@+id/settings"
         android:icon="@drawable/ic_settings"
         android:title="">
     </item>
+
     <item
+        android:id="@+id/notifications"
         android:title=""
         android:icon="@drawable/ic_notifications">
 
