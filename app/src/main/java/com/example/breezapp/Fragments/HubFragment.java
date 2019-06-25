@@ -1,6 +1,8 @@
 package com.example.breezapp.Fragments;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.breezapp.Activities.HomeActivity;
+import com.example.breezapp.Activities.OnBoardingActivity;
 import com.example.breezapp.R;
 
 
@@ -40,6 +44,15 @@ public class HubFragment extends Fragment {
         hub_button = (Button) v.findViewById(R.id.hub_button);
         map_button = (Button) v.findViewById(R.id.map_button);
 
+
+        hub_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), HomeActivity.class);
+                startActivity(i);
+            }
+        });
+/*
         hub_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +62,7 @@ public class HubFragment extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
             }
-        });
+        });*/
         map_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
