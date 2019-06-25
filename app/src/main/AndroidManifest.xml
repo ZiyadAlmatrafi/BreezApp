@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".OnBoardingActivity" />
-        <activity android:name=".AuthenticationActivity" />
+        <activity android:name=".Activities.OnBoardingActivity" />
+        <activity android:name=".Activities.AuthenticationActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activities.SplashActivity"
 
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
