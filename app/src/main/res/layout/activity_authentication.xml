@@ -7,4 +7,5 @@
     android:background="#FDFDFE"
     tools:context=".Activities.AuthenticationActivity"
     android:id="@+id/frame">
+
 </FrameLayout>

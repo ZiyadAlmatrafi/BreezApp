@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title=""
+        android:icon="@drawable/ic_home"
+        app:showAsAction="always"
+        >
+
+    </item>
+
+    <item android:icon="@drawable/ic_beenhere"
+        android:title="">
+
+    </item>
+    <item
+        android:title=""
+        android:icon="@drawable/ic_favorite">
+
+    </item>
+    <item
+        android:icon="@drawable/ic_settings"
+        android:title="">
+    </item>
+    <item
+        android:title=""
+        android:icon="@drawable/ic_notifications">
+
+    </item>
+
+</menu>
