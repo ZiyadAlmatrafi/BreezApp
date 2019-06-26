@@ -28,11 +28,13 @@ public class HomeActivity extends AppCompatActivity {
 
 
         setFragment(new MyHomeFragment());
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+      BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
+
                     case R.id.my_home:
                         setFragment(new MyHomeFragment());
                         break;
@@ -49,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
                         setFragment(new NotificationFragment());
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
@@ -58,6 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.frame,f);
+       // ft.addToBackStack(null);
         ft.commit();
     }
 }
