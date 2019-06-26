@@ -4,24 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.MyHomeFragment">
+    tools:context=".Fragments.AccountFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <GridView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </GridView>
-
     <TextView
-        android:layout_width="372dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="273dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:text="My Home Fragment"
+        android:layout_width="279dp"
+        android:layout_height="258dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="162dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:text="Account fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
