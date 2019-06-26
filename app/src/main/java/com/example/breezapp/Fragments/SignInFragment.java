@@ -1,6 +1,6 @@
 package com.example.breezapp.Fragments;
 
-
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.breezapp.Activities.HomeActivity;
 import com.example.breezapp.R;
 
 /**
@@ -24,7 +25,6 @@ public class SignInFragment extends Fragment {
     public SignInFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,11 +58,8 @@ public class SignInFragment extends Fragment {
         doSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new MyHomeFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
+                Intent i = new Intent(getContext(), HomeActivity.class);
+                startActivity(i);
             }
         });
 
