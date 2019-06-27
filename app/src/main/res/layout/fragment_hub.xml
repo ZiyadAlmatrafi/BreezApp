@@ -138,6 +138,7 @@
         android:background="#F9F9F9"
         android:shadowColor="#F9F9F9"
         android:text="Use maps"
+
         android:textColor="#008477"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
