@@ -4,18 +4,24 @@ package com.example.breezapp.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.breezapp.R;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyHomeFragment extends Fragment {
+public class MyHomeFragment extends Fragment  {
+
 
 
     public MyHomeFragment() {
