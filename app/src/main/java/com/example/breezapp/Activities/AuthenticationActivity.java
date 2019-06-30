@@ -6,23 +6,32 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.breezapp.Fragments.ConnectedHubFragment;
 import com.example.breezapp.Fragments.ElectricityFragment;
 import com.example.breezapp.Fragments.SignInFragment;
+import com.example.breezapp.Fragments.SignUpFragment;
 import com.example.breezapp.R;
+import com.github.paolorotolo.appintro.AppIntro;
+import com.github.paolorotolo.appintro.AppIntroFragment;
+import com.github.paolorotolo.appintro.model.SliderPage;
 
 public class AuthenticationActivity extends AppCompatActivity {
-        Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authentication);
+         setContentView(R.layout.activity_authentication);
 
-        setFragment(new SignInFragment());
+         setFragment(new SignUpFragment());
+
     }
+
+
 
     public void setFragment(Fragment f){
         FragmentManager fragmentManager = getSupportFragmentManager();
