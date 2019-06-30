@@ -5,16 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.breezapp.Adapters.SettingsAdapter;
 import com.example.breezapp.Fragments.DashBoardFragment;
 import com.example.breezapp.Fragments.ElectricityFragment;
 import com.example.breezapp.Fragments.MyHomeFragment;
 import com.example.breezapp.Fragments.NotificationFragment;
 import com.example.breezapp.Fragments.RoutineFragment;
 import com.example.breezapp.Fragments.SettingsFragment;
+import com.example.breezapp.Models.Setting;
 import com.example.breezapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
 
 
 

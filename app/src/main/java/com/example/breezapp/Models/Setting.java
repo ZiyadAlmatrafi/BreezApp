@@ -8,6 +8,10 @@ public class Setting {
         return option;
     }
 
+    public Setting(String option) {
+        this.option = option;
+    }
+
     public void setOption(String option) {
         this.option = option;
     }
