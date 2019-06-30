@@ -21,7 +21,7 @@ public class IntroActivity extends AppIntro {
 
 
         addSlide(AppIntroFragment.newInstance("Step 1","Plug to the Electricity", R.drawable.electricity, Color.rgb(0,153,76)));
-        addSlide(AppIntroFragment.newInstance("Step 2","Plug the Ethernet",R.drawable.lan, Color.rgb(0,102,204)));
+        addSlide(AppIntroFragment.newInstance("Step p2","Plug the Ethernet",R.drawable.lan, Color.rgb(0,102,204)));
 
     }
 
