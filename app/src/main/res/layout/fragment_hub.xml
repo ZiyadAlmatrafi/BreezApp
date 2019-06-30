@@ -121,6 +121,7 @@
         android:layout_marginTop="52dp"
         android:background="#0AA092"
         android:text="Continue"
+        android:textColor="#FAFFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />

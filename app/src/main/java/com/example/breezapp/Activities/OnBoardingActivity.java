@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.example.breezapp.Fragments.ConnectedHubFragment;
 import com.example.breezapp.Fragments.ElectricityFragment;
 import com.example.breezapp.R;
 
@@ -20,7 +21,7 @@ public class OnBoardingActivity extends AppCompatActivity {
 
 
 
-                setFragment(new ElectricityFragment());
+                setFragment(new ConnectedHubFragment());
 
     }
     public void setFragment(Fragment f){

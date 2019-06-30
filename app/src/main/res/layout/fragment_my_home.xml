@@ -7,23 +7,68 @@
     tools:context=".Fragments.MyHomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <GridView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-    </GridView>
+    <ImageView
+    android:id="@+id/imageView4"
+    android:layout_width="160dp"
+    android:layout_height="119dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginRight="32dp"
+    android:src="@drawable/kitchen_icon"
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:layout_editor_absoluteY="341dp" />
 
-    <TextView
-        android:layout_width="372dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="273dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:text="My Home Fragment"
+    <ImageView
+        android:id="@+id/c1"
+        android:layout_width="292dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
+        android:src="@drawable/c1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:layout_width="162dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/c2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="158dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/bathroom_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        tools:layout_editor_absoluteY="183dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="154dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:src="@drawable/living_room_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="183dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
