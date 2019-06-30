@@ -32,7 +32,7 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_settings, container, false);
-
+        /*
         home_hub = (TextView) v.findViewById(R.id.home_hub);
         account = (TextView) v.findViewById(R.id.account);
         manage_shared = (TextView) v.findViewById(R.id.manged_shared);
@@ -78,7 +78,9 @@ public class SettingsFragment extends Fragment {
                 ft.commit();
             }
         });
+        */
         return v;
+
     }
 
 
