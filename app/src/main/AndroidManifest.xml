@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +14,15 @@
         android:roundIcon="@drawable/breez_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Activities.HomeActivity"
-            >
-        </activity>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCK5keV2Sd_d529nuMJYxuaD5Y_e5UiKoU" />
+
+        <activity
+            android:name=".Activities.MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+        <activity android:name=".Activities.HomeActivity"></activity>
         <activity android:name=".Activities.OnBoardingActivity" />
         <activity android:name=".Activities.AuthenticationActivity" />
         <activity

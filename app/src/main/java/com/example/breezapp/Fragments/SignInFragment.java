@@ -1,5 +1,6 @@
 package com.example.breezapp.Fragments;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.breezapp.Activities.HomeActivity;
 import com.example.breezapp.R;
+import com.google.android.gms.common.api.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +25,10 @@ public class SignInFragment extends Fragment {
     Button goSignIn;
     Button goSignUp;
     Button doSignIn;
+    EditText emailId;
+    EditText inputPassword;
+
+
     public SignInFragment() {
         // Required empty public constructor
     }
@@ -58,6 +65,7 @@ public class SignInFragment extends Fragment {
         doSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //login();
                 Intent i = new Intent(getContext(), HomeActivity.class);
                 startActivity(i);
             }
@@ -66,4 +74,14 @@ public class SignInFragment extends Fragment {
         return v;
     }
 
-}
+   /* public void login(){
+
+        final String email = emailId.getText().toString().trim();
+        final String password = inputPassword.getText().toString().trim();
+        if (email.equals("") || password.equals("")){
+        }else {
+            }
+
+        }*/
+
+    }
