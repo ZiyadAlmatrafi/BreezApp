@@ -20,8 +20,9 @@ public class IntroActivity extends AppIntro {
        // setContentView(R.layout.activity_intro);
 
 
-        addSlide(AppIntroFragment.newInstance("Step 1","Plug to the Electricity", R.drawable.electricity, Color.rgb(0,153,76)));
-        addSlide(AppIntroFragment.newInstance("Step 2","Plug the Ethernet",R.drawable.lan, Color.rgb(0,102,204)));
+        addSlide(AppIntroFragment.newInstance("Step 1","Plug to the Electricity", R.drawable.electricity, Color.rgb(18, 167, 156)));
+        addSlide(AppIntroFragment.newInstance("Step 2","Plug the Ethernet",R.drawable.ethernet, Color.rgb(18, 167, 156)));
+        addSlide(AppIntroFragment.newInstance("Good Work","You Are Ready",R.drawable.breez_logo_white, Color.rgb(18, 167, 156)));
 
     }
 

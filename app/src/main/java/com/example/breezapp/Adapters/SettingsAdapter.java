@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,11 +50,28 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
          public TextView textView;
        //  OnOptionListener mOnOptionListener;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull final View itemView) {
             super(itemView);
 
             textView = (TextView) itemView.findViewById(R.id.item_setting);
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    /*
+                    switch (getAdapterPosition()){
+                        case  0 :
+                            Toast.makeText(null, "Go 1", Toast.LENGTH_SHORT).show();
+                            break;
 
+                        case 1:
+                            Toast.makeText(null, "Go 2", Toast.LENGTH_SHORT).show();
+
+
+                            break;
+                    }
+                    */
+                }
+            });
         }
 
         @Override
@@ -64,7 +82,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
 
     }
 
-    public interface OnOptionListener{
-
+    public interface ItemClickListener {
+        void onItemClick(View view, int position);
     }
 }
