@@ -36,7 +36,9 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull SettingsAdapter.ViewHolder holder, int position) {
+
         holder.textView.setText(setting[position].getOption());
+
 
     }
 
@@ -79,6 +81,10 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
 
 
         }
+
+    }
+    private void fragmentJump(Setting mItemSelected) {
+
 
     }
 

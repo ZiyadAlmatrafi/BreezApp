@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.example.breezapp.Activities.AuthenticationActivity;
 import com.example.breezapp.Activities.HomeActivity;
+import com.example.breezapp.Activities.OnBoardingActivity;
 import com.example.breezapp.Fragments.EnterHubCodeFragment;
 import com.example.breezapp.R;
 
@@ -36,8 +37,11 @@ public class HubFoundFragment extends Fragment {
         enterCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), AuthenticationActivity.class);
-                startActivity(i);
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+
+                ft.replace(R.id.frame,new HubFragment() );
+                ft.addToBackStack(null);
+                ft.commit();
             }
         });
 
