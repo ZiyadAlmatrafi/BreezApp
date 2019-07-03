@@ -39,7 +39,7 @@ public class HubFoundFragment extends Fragment {
             public void onClick(View view) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
 
-                ft.replace(R.id.frame,new HubFragment() );
+                ft.replace(R.id.frame,new SignUpFragment() );
                 ft.addToBackStack(null);
                 ft.commit();
             }

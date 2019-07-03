@@ -1,6 +1,7 @@
 package com.example.breezapp.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -14,12 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.breezapp.Activities.SettingsActivity;
 import com.example.breezapp.Adapters.SettingsAdapter;
 import com.example.breezapp.Models.Setting;
 import com.example.breezapp.R;
 
 
-public class SettingsFragment extends Fragment {
+public class SettingsFragment extends Fragment  {
     TextView home_hub;
     TextView account;
     TextView manage_shared;
@@ -43,73 +45,38 @@ public class SettingsFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
 
-        Setting setting[] = {new Setting("Homes and hubs settings"),
-                new Setting("Account"),
-                new Setting("Manage shared devices"),
-                new Setting("Manage third party accounts"),
-                new Setting("Supported devices"),
-                new Setting("Connect devices guide"),
-                new Setting("Feedback"),
-                new Setting("About us")
+        Setting s1 = new Setting("Homes and hubs settings");
+        Setting s2 = new Setting("Account");
+        Setting s3 = new Setting("Manage shared devices");
+        Setting s4 = new Setting("Manage third party accounts");
+        Setting s5 = new Setting("Supported devices");
+        Setting s6 = new Setting("Connect devices guide");
+        Setting s7 = new Setting("Feedback");
+        Setting s8 = new Setting("About us");
+
+
+
+        Setting setting[] = {new Setting(s1.getOption()),
+                new Setting(s2.getOption()),
+                new Setting(s3.getOption()),
+                new Setting(s4.getOption()),
+                new Setting(s5.getOption()),
+                new Setting(s6.getOption()),
+                new Setting(s7.getOption()),
+                new Setting(s8.getOption())
 
         };
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        SettingsAdapter mAdapter = new SettingsAdapter(setting);
+        SettingsAdapter mAdapter = new SettingsAdapter(setting,getContext());
 
         recyclerView.setAdapter(mAdapter);
 
 
-        /*
-        home_hub = (TextView) v.findViewById(R.id.home_hub);
-        account = (TextView) v.findViewById(R.id.account);
-        manage_shared = (TextView) v.findViewById(R.id.manged_shared);
-        manage_third_account = (TextView) v.findViewById(R.id.manage_third_account);
-
-        home_hub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new HomesHubsFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-        account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new AccountFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-        manage_shared.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new ManageSharedDevicesFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-        manage_third_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new ManageThirdAccountFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-        */
         return v;
 
     }
+
 
 
 }
