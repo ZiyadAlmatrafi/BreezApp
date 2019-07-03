@@ -8,15 +8,16 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="369dp"
-        android:layout_height="77dp"
+        android:layout_width="306dp"
+        android:layout_height="36dp"
         android:layout_marginStart="26dp"
         android:layout_marginLeft="26dp"
-        android:layout_marginTop="231dp"
+        android:layout_marginTop="276dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Dashboard fragment"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

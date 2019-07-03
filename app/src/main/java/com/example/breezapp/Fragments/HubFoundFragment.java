@@ -1,5 +1,6 @@
 package com.example.breezapp.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.breezapp.Activities.AuthenticationActivity;
+import com.example.breezapp.Activities.HomeActivity;
+import com.example.breezapp.Activities.OnBoardingActivity;
 import com.example.breezapp.Fragments.EnterHubCodeFragment;
 import com.example.breezapp.R;
 
@@ -35,11 +39,12 @@ public class HubFoundFragment extends Fragment {
             public void onClick(View view) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
 
-                ft.replace(R.id.frame,new EnterHubCodeFragment() );
+                ft.replace(R.id.frame,new HubFragment() );
                 ft.addToBackStack(null);
                 ft.commit();
             }
         });
+
         return v;
     }
     // TODO: Rename method, update argument and hook method into UI event

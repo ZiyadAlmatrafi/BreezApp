@@ -6,7 +6,6 @@
         android:id="@+id/my_home"
         android:title=""
         android:icon="@drawable/ic_home"
-        app:showAsAction="always"
 
         >
 
@@ -16,7 +15,6 @@
         android:id="@+id/routine"
         android:icon="@drawable/ic_beenhere"
         android:title=""
-        app:showAsAction="always"
 
         >
 
