@@ -19,9 +19,11 @@
         android:roundIcon="@drawable/breez_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.SettingsActivity"></activity>
+
         <activity android:name=".activities.RoutinesActivity"></activity>
         <activity android:name=".activities.RoomsActivity" />
-        <activity android:name=".activities.SettingsActivity" />
+
         <activity android:name=".activities.IntroActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
