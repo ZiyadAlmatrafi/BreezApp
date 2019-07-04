@@ -17,7 +17,7 @@
         android:layout_height="150dp"
         android:padding="6dp"
         android:scaleType="fitXY"
-        android:src="@drawable/p2" />
+        android:src="@drawable/living_room_icon" />
 
 
 </androidx.cardview.widget.CardView>

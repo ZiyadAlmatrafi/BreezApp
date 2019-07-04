@@ -1,6 +1,6 @@
 package com.example.breezapp.rest;
 
-import com.example.breezapp.Models.ThingsList;
+import com.example.breezapp.models.ThingsList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

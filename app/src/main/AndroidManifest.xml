@@ -19,8 +19,10 @@
         android:roundIcon="@drawable/breez_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.SettingsActivity"></activity>
-        <activity android:name=".Activities.IntroActivity" />
+        <activity android:name=".activities.RoutinesActivity"></activity>
+        <activity android:name=".activities.RoomsActivity" />
+        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".activities.IntroActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -34,13 +36,13 @@
             android:value="AIzaSyCK5keV2Sd_d529nuMJYxuaD5Y_e5UiKoU" />
 
         <activity
-            android:name=".Activities.MapsActivity"
+            android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Activities.HomeActivity" />
-        <activity android:name=".Activities.OnBoardingActivity" />
-        <activity android:name=".Activities.AuthenticationActivity" />
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.OnBoardingActivity" />
+        <activity android:name=".activities.AuthenticationActivity" />
         <activity
-            android:name=".Activities.SplashActivity"
+            android:name=".activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
