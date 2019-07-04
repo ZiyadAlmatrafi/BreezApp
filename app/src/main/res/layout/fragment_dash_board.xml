@@ -10,8 +10,8 @@
         android:id="@+id/textView12"
         android:layout_width="310dp"
         android:layout_height="28dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
@@ -21,7 +21,6 @@
         android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,8 +38,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_dash"
-            android:layout_width="391dp"
-            android:layout_height="607dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
