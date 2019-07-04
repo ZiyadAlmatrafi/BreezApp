@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="3dp"
+    android:padding="6dp"
+    android:id="@+id/cardView"
+    android:onClick="click"
+    app:cardCornerRadius="6dp">
+
+
+    <ImageView
+        android:id="@+id/rooms"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:padding="6dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/p2" />
+
+
+</androidx.cardview.widget.CardView>

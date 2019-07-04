@@ -1,18 +1,33 @@
 package com.example.breezapp.Fragments;
 
 
-import android.content.Intent;
+import android.app.Application;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.breezapp.R;
+import com.example.breezapp.Adapters.RoomsAdapter;
+import com.example.breezapp.Models.Rooms;
+import com.example.breezapp.Models.ThingsList;
+import com.example.breezapp.rest.RestClient;
+import com.example.breezapp.rest.ThingsAPIService;
+
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 /**
@@ -20,96 +35,60 @@ import com.example.breezapp.R;
  */
 public class MyHomeFragment extends Fragment  {
 
+    TextView textView;
+    private static final String TAG = MyHomeFragment.class.getSimpleName();
+    ThingsAPIService apiService;
 
 
-    ImageView bed_room , living_room , bath_room , kitchen , store_room , study_room;
+    RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
+    RecyclerView.LayoutManager layoutManager;
+    ArrayList<Rooms> arrayList = new ArrayList<>();
+
+    int [] im_id={R.drawable.p2,R.drawable.living_room_icon};
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
 
 
-    public MyHomeFragment() {
-        // Required empty public constructor
+
+        View view = inflater.inflate(R.layout.fragment_my_home, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        layoutManager = (new GridLayoutManager(getContext(),2));
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+
+
+        for (int id : im_id){
+
+            arrayList.add(new Rooms(id));
+
+        }
+
+
+        adapter= new RoomsAdapter(arrayList);
+        recyclerView.setAdapter(adapter);
+        return view;
     }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_my_home, container, false);
-
-        bed_room = (ImageView) v.findViewById(R.id.bed_room);
-        bed_room.setOnClickListener(new View.OnClickListener() {
+    private void fetchThingsList() {
+        Call<ThingsList> call = apiService.fetchThings("android");
+        call.enqueue(new Callback<ThingsList>() {
             @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+            public void onResponse(Call<ThingsList> call, Response<ThingsList> response) {
+                Log.d(TAG, "Total number of questions fetched : " + response.body().getThings().size());
+                textView.setText(""+response.body().getThings().size());
+            }
 
-                ft.replace(R.id.frame,new BedRoomFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
+            @Override
+            public void onFailure(Call<ThingsList> call, Throwable t) {
+                Log.e(TAG, "Got error : " + t.getLocalizedMessage());
             }
         });
-
-        living_room = (ImageView) v.findViewById(R.id.living_room);
-        living_room.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new LivingRoomFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-
-        bath_room = (ImageView) v.findViewById(R.id.bath_room);
-        bath_room.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new BathRoomFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-
-        kitchen = (ImageView) v.findViewById(R.id.kitchen);
-        kitchen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new KitchenFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-
-        store_room = (ImageView) v.findViewById(R.id.store_room);
-        store_room.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new StoreFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-
-        study_room = (ImageView) v.findViewById(R.id.study_room);
-        study_room.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new StudyRoomFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
-
-        return v;
     }
 
 
 }
+
