@@ -7,7 +7,9 @@
     android:padding="6dp"
     android:id="@+id/cardView"
     android:onClick="click"
-    app:cardCornerRadius="6dp">
+    app:cardCornerRadius="6dp"
+    android:layout_margin="4dp"
+    app:cardUseCompatPadding="true">
 
 
     <ImageView
@@ -20,3 +22,4 @@
 
 
 </androidx.cardview.widget.CardView>
+

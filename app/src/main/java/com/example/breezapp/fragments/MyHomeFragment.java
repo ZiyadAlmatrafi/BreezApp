@@ -58,7 +58,7 @@ public class MyHomeFragment extends Fragment  {
         Rooms d1 = new Rooms(R.drawable.living_room_icon);
         Rooms d2 = new Rooms(R.drawable.bathroom_icon);
 
-ArrayList<Rooms> rooms = new ArrayList<Rooms>();
+        ArrayList<Rooms> rooms = new ArrayList<Rooms>();
 
         rooms.add(d1);
         rooms.add(d2);
