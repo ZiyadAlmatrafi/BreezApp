@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.HubFragment">
+    tools:context=".fragments.HubFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

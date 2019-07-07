@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FDFDFE"
-    tools:context=".Activities.AuthenticationActivity"
+    tools:context=".activities.AuthenticationActivity"
     android:id="@+id/frame">
 
 </FrameLayout>

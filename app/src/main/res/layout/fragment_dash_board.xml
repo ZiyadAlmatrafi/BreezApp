@@ -4,21 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.DashBoardFragment">
+    tools:context=".fragments.DashBoardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="306dp"
-        android:layout_height="36dp"
+        android:id="@+id/textView12"
+        android:layout_width="310dp"
+        android:layout_height="28dp"
         android:layout_marginStart="26dp"
         android:layout_marginLeft="26dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Dashboard fragment"
+        android:gravity="center"
+        android:text="Add devices"
+        android:textColor="#000000"
+        android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="389dp"
+        android:layout_height="612dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_dash"
+            android:layout_width="391dp"
+            android:layout_height="607dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- TODO: Update blank fragment layout -->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
