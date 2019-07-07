@@ -16,6 +16,7 @@ import com.example.breezapp.R;
 import com.example.breezapp.adapters.RoomsAdapter;
 import com.example.breezapp.models.Rooms;
 import com.example.breezapp.models.ThingsList;
+import com.example.breezapp.rest.RestClient;
 import com.example.breezapp.rest.ThingsAPIService;
 
 import java.util.ArrayList;
@@ -36,21 +37,21 @@ public class MyHomeFragment extends Fragment  {
 
 
     RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-    ArrayList<Rooms> arrayList = new ArrayList<>();
 
-    //String [] im_id={R.drawable.p2,R.drawable.living_room_icon};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
 
-
-
         View view = inflater.inflate(R.layout.fragment_my_home, container, false);
-        layoutManager = (new GridLayoutManager(getContext(),2));
 
+
+        //apiService = RestClient.getClient().create(ThingsAPIService.class);
+        textView = (TextView)view.findViewById(R.id.all_things);
+//        fetchThingsList();
+
+        layoutManager = (new GridLayoutManager(getContext(),2));
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
@@ -65,12 +66,11 @@ public class MyHomeFragment extends Fragment  {
 
 
         RoomsAdapter mAdapter =new RoomsAdapter(rooms,getContext());
-        //adapter= new RoomsAdapter(arrayList);
         recyclerView.setAdapter(mAdapter);
         return view;
     }
 
-
+/*
     private void fetchThingsList() {
         Call<ThingsList> call = apiService.fetchThings("android");
         call.enqueue(new Callback<ThingsList>() {
@@ -87,6 +87,6 @@ public class MyHomeFragment extends Fragment  {
         });
     }
 
-
+*/
 }
 
