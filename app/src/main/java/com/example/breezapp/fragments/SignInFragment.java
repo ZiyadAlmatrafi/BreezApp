@@ -15,6 +15,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.example.breezapp.R;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.breezapp.activities.AuthenticationActivity;
 import com.example.breezapp.activities.HomeActivity;
@@ -30,13 +33,12 @@ import retrofit2.Response;
 
 import static android.content.ContentValues.TAG;
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SignInFragment extends Fragment {
 
-    Button goSignIn;
-    Button goSignUp;
     Button doSignIn;
 
     private EditText editTextEmail;
@@ -55,34 +57,15 @@ public class SignInFragment extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_sign_in, container, false);
 
-        editTextEmail = v.findViewById(R.id.EmailId);
-        editTextPassword = v.findViewById(R.id.password);
 
-        goSignIn = (Button) v.findViewById(R.id.sign_in);
-        goSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new SignInFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
+        editTextEmail = v.findViewById(R.id.emailId);
+        editTextPassword = v.findViewById(R.id.inputPassword);
 
-        goSignUp = (Button) v.findViewById(R.id.sign_up);
-        goSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
 
-                ft.replace(R.id.frame,new SignUpFragment());
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });
 
         doSignIn = (Button) v.findViewById(R.id.doSignIn);
         doSignIn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
@@ -90,7 +73,6 @@ public class SignInFragment extends Fragment {
 
             }
         });
-
         return v;
     }
 
@@ -158,4 +140,6 @@ public class SignInFragment extends Fragment {
 
 
 }
+
+
 

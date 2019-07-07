@@ -1,5 +1,6 @@
 package com.example.breezapp.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.breezapp.R;
+import com.example.breezapp.activities.AuthenticationActivity;
+import com.example.breezapp.activities.HomeActivity;
 
 
 public class HubFoundFragment extends Fragment {
@@ -32,11 +35,8 @@ public class HubFoundFragment extends Fragment {
         enterCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame,new SignUpFragment() );
-                ft.addToBackStack(null);
-                ft.commit();
+                Intent i = new Intent(getContext(), AuthenticationActivity.class);
+                startActivity(i);
             }
         });
 
