@@ -30,7 +30,7 @@ public class RoutineFragment extends Fragment  {
     RecyclerView.LayoutManager layoutManager;
     ArrayList<Routines> arrayList = new ArrayList<>();
 
-    int [] im_id={R.drawable.morning,R.drawable.night};
+   //int [] im_id={R.drawable.morning,R.drawable.night};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -38,7 +38,7 @@ public class RoutineFragment extends Fragment  {
 
 
 
-        View view = inflater.inflate(R.layout.fragment_routine, container, false);
+      /*  View view = inflater.inflate(R.layout.fragment_routine, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         layoutManager = (new GridLayoutManager(getContext(),2));
         recyclerView.setLayoutManager(layoutManager);
@@ -55,7 +55,31 @@ public class RoutineFragment extends Fragment  {
         adapter= new RoutinesAdapter(arrayList);
         recyclerView.setAdapter(adapter);
         return view;
-    }
+    }*/
 
+
+
+
+        View view = inflater.inflate(R.layout.fragment_routine, container, false);
+        layoutManager = (new GridLayoutManager(getContext(),2));
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+
+        Routines d1 = new Routines(R.drawable.morning);
+        Routines d2 = new Routines(R.drawable.night);
+
+        ArrayList<Routines> routines = new ArrayList<Routines>();
+
+        routines.add(d1);
+        routines.add(d2);
+
+
+        RoutinesAdapter mAdapter =new RoutinesAdapter(routines,getContext());
+        //adapter= new RoomsAdapter(arrayList);
+        recyclerView.setAdapter(mAdapter);
+        return view;
+    }
 
 }
