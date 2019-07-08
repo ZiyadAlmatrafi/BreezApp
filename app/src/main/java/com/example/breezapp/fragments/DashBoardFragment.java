@@ -40,31 +40,6 @@ public class DashBoardFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_dash);
 
-        Device d1 = new Device("Lamp",R.drawable.lamp);
-        Device d2 = new Device("light bulb",R.drawable.light_bulb);
-        Device d3 = new Device("Wall lamp",R.drawable.wall_lamp);
-        Device d4 = new Device("Lamp",R.drawable.lamp);
-        Device d5 = new Device("light bulb",R.drawable.light_bulb);
-        Device d6 = new Device("Wall lamp",R.drawable.wall_lamp);
-        Device d7 = new Device("Lamp",R.drawable.lamp);
-        Device d8 = new Device("light bulb",R.drawable.light_bulb);
-        Device d9 = new Device("Wall lamp",R.drawable.wall_lamp);
-
-        Device device[] = {new Device(d1.getName(),d1.getImg()),
-                new Device(d2.getName(),d2.getImg()),
-                new Device(d3.getName(),d3.getImg()),
-                new Device(d4.getName(),d4.getImg()),
-                new Device(d5.getName(),d5.getImg()),
-                new Device(d6.getName(),d6.getImg()),
-                new Device(d7.getName(),d7.getImg()),
-                new Device(d8.getName(),d8.getImg()),
-                new Device(d9.getName(),d9.getImg()),
-
-        };
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        DashBoardAdapter mAdapter = new DashBoardAdapter(device,getContext());
-
-        recyclerView.setAdapter(mAdapter);
 
         return v;
     }

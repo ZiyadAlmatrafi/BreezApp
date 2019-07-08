@@ -31,6 +31,7 @@ public class RestClient {
                                 Request original = chain.request();
 
                                 Request.Builder requestBuilder = original.newBuilder()
+                                        .addHeader("Authorization", AUTH)
                                         .addHeader("Content-Type", AU)
                                         .addHeader("Accept", AUT)
                                         .method(original.method(), original.body());
@@ -60,4 +61,6 @@ public class RestClient {
     public LoginAPIService getApi() {
         return retrofit.create(LoginAPIService.class);
     }
+
+
 }

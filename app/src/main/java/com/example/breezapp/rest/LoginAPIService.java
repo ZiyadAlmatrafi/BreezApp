@@ -1,10 +1,12 @@
 package com.example.breezapp.rest;
 
 import com.example.breezapp.models.LoginResponse;
+import com.example.breezapp.models.ThingsResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -17,5 +19,9 @@ public interface LoginAPIService {
             @Field("password") String password
     );
 
-   // Call<LoginResponse> userLogin(@Query("tagged") String tags);
+
+    @GET("/rest/things")  //End Url
+    Call<ThingsResponse> getThings();
+
+
 }

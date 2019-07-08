@@ -48,7 +48,7 @@ public class SignInFragment extends Fragment {
     private EditText editTextEmail;
     private EditText editTextPassword;
 
-    LoginAPIService apiService;
+   // LoginAPIService apiService;
     private static final String TAG = SignInFragment.class.getSimpleName();
 
     public SignInFragment() {
@@ -116,7 +116,8 @@ public class SignInFragment extends Fragment {
             call.enqueue(new Callback<LoginResponse>() {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                    LoginResponse loginResponse = response.body();
+                  // LoginResponse loginResponse = response.body();
+
                     Log.e("responce",response.code()+"");
                     if (response.code() == 200) {
                      Toast.makeText(getContext(), "Go Login", Toast.LENGTH_SHORT).show();
