@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import com.example.breezapp.R;
+import com.example.breezapp.storage.SharedPrefManager;
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 
@@ -15,15 +16,22 @@ public class IntroActivity extends AppIntro {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_intro);
+        // setContentView(R.layout.activity_intro);
+
+        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
+            Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+           // i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            startActivity(i);
+        } else {
 
 
-        addSlide(AppIntroFragment.newInstance("Step 1","Plug to the Electricity", R.drawable.electricity, Color.rgb(18, 167, 156)));
-        addSlide(AppIntroFragment.newInstance("Step 2","Plug the Ethernet",R.drawable.ethernet, Color.rgb(18, 167, 156)));
-        addSlide(AppIntroFragment.newInstance("Good Work","You Are Ready",R.drawable.breez_logo_white, Color.rgb(18, 167, 156)));
+            addSlide(AppIntroFragment.newInstance("Step 1", "Plug to the Electricity", R.drawable.electricity, Color.rgb(18, 167, 156)));
+            addSlide(AppIntroFragment.newInstance("Step 2", "Plug the Ethernet", R.drawable.ethernet, Color.rgb(18, 167, 156)));
+            addSlide(AppIntroFragment.newInstance("Good Work", "You Are Ready", R.drawable.breez_logo_white, Color.rgb(18, 167, 156)));
 
+        }
     }
-
     @Override
     public void onSkipPressed(Fragment currentFragment) {
         super.onSkipPressed(currentFragment);

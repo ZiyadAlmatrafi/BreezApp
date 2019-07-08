@@ -9,6 +9,8 @@ import com.example.breezapp.models.User;
 public class SharedPrefManager {
 
     private static final String SHARED_PREF_NAME = "my_shared_preff";
+    private static final String KEY_USERNAME = "keyusername";
+    private static final String KEY_PASSWORD = "keypassword";
 
     private static SharedPrefManager mInstance;
     private Context mCtx;
@@ -32,16 +34,17 @@ public class SharedPrefManager {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
 
-        editor.putString("username", user.getUsername());
-        editor.putString("password", user.getPassword());
+        editor.putString(KEY_USERNAME, user.getUsername());
+        editor.putString(KEY_PASSWORD, user.getPassword());
 
         editor.apply();
+
 
     }
 
     public boolean isLoggedIn() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getInt("id", -1) != -1;
+        return sharedPreferences.getString(KEY_USERNAME,null) != null;
     }
 
     public User getUser() {
@@ -49,8 +52,8 @@ public class SharedPrefManager {
         return new User(
 
 
-                sharedPreferences.getString("username", null),
-                sharedPreferences.getString("password", null)
+                sharedPreferences.getString(KEY_USERNAME, null),
+                sharedPreferences.getString(KEY_PASSWORD, null)
         );
     }
 

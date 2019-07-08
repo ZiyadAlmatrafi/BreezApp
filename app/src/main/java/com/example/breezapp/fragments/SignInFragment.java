@@ -1,5 +1,6 @@
 package com.example.breezapp.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +26,7 @@ import com.example.breezapp.activities.AuthenticationActivity;
 import com.example.breezapp.activities.HomeActivity;
 import com.example.breezapp.R;
 import com.example.breezapp.models.LoginResponse;
+import com.example.breezapp.models.User;
 import com.example.breezapp.rest.LoginAPIService;
 import com.example.breezapp.rest.RestClient;
 import com.example.breezapp.storage.SharedPrefManager;
@@ -40,7 +44,7 @@ import static android.content.ContentValues.TAG;
 public class SignInFragment extends Fragment {
 
     Button doSignIn;
-
+    private Context context;
     private EditText editTextEmail;
     private EditText editTextPassword;
 
@@ -78,8 +82,8 @@ public class SignInFragment extends Fragment {
 
     private void userLogin() {
 
-        String username = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+        final String username = editTextEmail.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
 
         if (username.isEmpty()) {
             editTextEmail.setError("Email is required");
@@ -116,17 +120,18 @@ public class SignInFragment extends Fragment {
                     Log.e("responce",response.code()+"");
                     if (response.code() == 200) {
                      Toast.makeText(getContext(), "Go Login", Toast.LENGTH_SHORT).show();
-/*
-                        SharedPrefManager.getInstance(getActivity())
-                                .saveUser(loginResponse.getUser());
-                                */
+                        User user = new User(username,password);
+                        SharedPrefManager.getInstance(getContext())
+                                .saveUser(user);
+
                         Intent i = new Intent(getContext(), HomeActivity.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                       // i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                         startActivity(i);
 
                   }else {
                        Toast.makeText(getContext(), "Wrong pass or username", Toast.LENGTH_LONG).show();
+
                   }
 
                 }
@@ -137,6 +142,10 @@ public class SignInFragment extends Fragment {
             });
 
 }
+    private void hideKeyboardFrom(View view){
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
 
 
 }
