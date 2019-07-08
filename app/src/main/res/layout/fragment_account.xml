@@ -8,12 +8,13 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/Page_titel"
+        android:id="@+id/Page_title"
         android:layout_width="413dp"
         android:layout_height="57dp"
         android:gravity="center"
         android:text="Account"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,13 +22,13 @@
 
     <ImageView
 
-        android:id="@+id/profail_photo"
+        android:id="@+id/profile_photo"
         android:layout_width="108dp"
         android:layout_height="101dp"
-        android:src="@drawable/profail_photo"
+        android:src="@drawable/profile_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Page_titel"
+        app:layout_constraintTop_toBottomOf="@+id/Page_title"
         tools:ignore="MissingConstraints" />
 
 
@@ -41,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profail_photo" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_photo" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

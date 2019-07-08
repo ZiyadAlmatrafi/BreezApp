@@ -1,7 +1,12 @@
 package com.example.breezapp.rest;
 
 import com.example.breezapp.models.LoginResponse;
+
 import com.example.breezapp.models.ThingsResponse;
+
+import com.example.breezapp.models.Thing;
+import com.example.breezapp.models.ThingResponse;
+
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -20,8 +25,14 @@ public interface LoginAPIService {
     );
 
 
+/*
     @GET("/rest/things")  //End Url
     Call<ThingsResponse> getThings();
 
+*/
 
+    @GET("/rest/things")
+    Call<ThingResponse> getThings();
+
+   // Call<LoginResponse> userLogin(@Query("tagged") String tags);
 }
