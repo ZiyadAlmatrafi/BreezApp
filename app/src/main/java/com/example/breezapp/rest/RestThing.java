@@ -28,8 +28,10 @@ public class RestThing {
                             Request original = chain.request();
 
                             Request.Builder requestBuilder = original.newBuilder()
-                                   // .addHeader("Authorization", AUTH)
-                                    .addHeader("Accept", AUT)
+                                   // .addHeader("Content-Type", AUT)
+
+                                    .addHeader("Authorization", AUTH)
+                                    //.addHeader("Accept", AUT)
                                     .method(original.method(), original.body());
 
                             Request request = requestBuilder.build();

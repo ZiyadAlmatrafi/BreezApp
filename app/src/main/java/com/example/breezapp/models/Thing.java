@@ -1,15 +1,17 @@
 package com.example.breezapp.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Thing {
     private String status;
+
+    @SerializedName("label")
     private String label;
+
+    @SerializedName("location")
     private String location;
 
-    public Thing(String location) {
-        this.location=location;
-       // this.status = status;
-        //this.label = label;
-    }
+
 
     public String getLocation() {
         return location;
@@ -21,5 +23,17 @@ public class Thing {
 
     public String getLabel() {
         return label;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
