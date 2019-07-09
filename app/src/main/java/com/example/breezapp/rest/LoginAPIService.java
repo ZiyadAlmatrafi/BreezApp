@@ -2,18 +2,16 @@ package com.example.breezapp.rest;
 
 import com.example.breezapp.models.LoginResponse;
 
-import com.example.breezapp.models.ThingsResponse;
-
 import com.example.breezapp.models.Thing;
-import com.example.breezapp.models.ThingResponse;
 
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
 
 public interface LoginAPIService {
 
@@ -32,7 +30,10 @@ public interface LoginAPIService {
 */
 
     @GET("/rest/things")
-    Call<ThingResponse> getThings();
+    Call<List<Thing>> getThings();
+
+   // @GET("/rest/things")
+    //Call<ThingsResponse> getThings();
 
    // Call<LoginResponse> userLogin(@Query("tagged") String tags);
 }

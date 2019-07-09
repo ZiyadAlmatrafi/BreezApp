@@ -63,12 +63,12 @@ public class DashBoardFragment extends Fragment {
 */
 
 
-        response();
+      //  response();
 
 
         return v;
 }
-
+/*
     public void response() {
         try {
 
@@ -79,9 +79,10 @@ public class DashBoardFragment extends Fragment {
             call.enqueue(new Callback<ThingResponse>() {
                 @Override
                 public void onResponse(Call<ThingResponse> call, Response<ThingResponse> response) {
+
                     ThingResponse thingResponse = response.body();
                     ButterKnife.bind(getActivity());
-                    data = new ArrayList<>(Arrays.asList(thingResponse.getThings()));
+                    data = response.body().getThings();
                     recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                     mAdapter = new DashBoardAdapter(data);
                     recyclerView.setAdapter(mAdapter);
@@ -106,4 +107,5 @@ public class DashBoardFragment extends Fragment {
 
     }
 
+*/
 }

@@ -38,27 +38,6 @@ public class RoutineFragment extends Fragment  {
 
 
 
-      /*  View view = inflater.inflate(R.layout.fragment_routine, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        layoutManager = (new GridLayoutManager(getContext(),2));
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-
-
-        for (int id : im_id){
-
-            arrayList.add(new Routines(id));
-
-        }
-
-
-        adapter= new RoutinesAdapter(arrayList);
-        recyclerView.setAdapter(adapter);
-        return view;
-    }*/
-
-
-
 
         View view = inflater.inflate(R.layout.fragment_routine, container, false);
         layoutManager = (new GridLayoutManager(getContext(),2));

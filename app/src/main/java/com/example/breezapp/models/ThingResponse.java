@@ -3,13 +3,13 @@ package com.example.breezapp.models;
 import java.util.ArrayList;
 
 public class ThingResponse {
-    private Thing[] things;
+    private ArrayList<Thing> things;
 
-    public ThingResponse(Thing[] things) {
+    public ThingResponse(ArrayList<Thing> things) {
         this.things = things;
     }
 
-    public Thing[] getThings() {
+    public ArrayList<Thing> getThings() {
         return things;
     }
 }
