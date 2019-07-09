@@ -9,8 +9,8 @@ import com.example.breezapp.models.User;
 public class SharedPrefManager {
 
     private static final String SHARED_PREF_NAME = "my_shared_preff";
-    private static final String KEY_USERNAME = "keyusername";
-    private static final String KEY_PASSWORD = "keypassword";
+   // private static final String KEY_USERNAME = "keyusername";
+   // private static final String KEY_PASSWORD = "keypassword";
 
     private static SharedPrefManager mInstance;
     private Context mCtx;
@@ -34,8 +34,8 @@ public class SharedPrefManager {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
 
-        editor.putString(KEY_USERNAME, user.getUsername());
-        editor.putString(KEY_PASSWORD, user.getPassword());
+        editor.putString(Constants.KEY_USERNAME, user.getUsername());
+        editor.putString(Constants.KEY_PASSWORD, user.getPassword());
 
         editor.apply();
 
@@ -44,7 +44,7 @@ public class SharedPrefManager {
 
     public boolean isLoggedIn() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(KEY_USERNAME,null) != null;
+        return sharedPreferences.getString(Constants.KEY_USERNAME,null) != null;
     }
 
     public User getUser() {
@@ -52,8 +52,8 @@ public class SharedPrefManager {
         return new User(
 
 
-                sharedPreferences.getString(KEY_USERNAME, null),
-                sharedPreferences.getString(KEY_PASSWORD, null)
+                sharedPreferences.getString(Constants.KEY_USERNAME, null),
+                sharedPreferences.getString(Constants.KEY_PASSWORD, null)
         );
     }
 

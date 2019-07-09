@@ -18,11 +18,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.ViewHolder> {
-    private ArrayList<Thing> thingList;
+   // private ArrayList<Thing> thingList;
+
+    private List<Thing> thingList;
     Context context;
 
-    public DashBoardAdapter(ArrayList<Thing> thingList) {
+    public DashBoardAdapter(List<Thing> thingList, Context context) {
         this.thingList = thingList;
+        this.context = context;
     }
 
     @NonNull

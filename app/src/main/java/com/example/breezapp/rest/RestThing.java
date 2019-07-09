@@ -36,6 +36,7 @@ public class RestThing {   private static RestThing mInstance;
                                 Request request = requestBuilder.build();
                                 return chain.proceed(request);
                             }
+
                         }
                 ).build();
 

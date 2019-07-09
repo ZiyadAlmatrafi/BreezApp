@@ -11,6 +11,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface LoginAPIService {
@@ -28,12 +29,9 @@ public interface LoginAPIService {
     Call<ThingsResponse> getThings();
 
 */
-
     @GET("/rest/things")
     Call<List<Thing>> getThings();
 
-   // @GET("/rest/things")
-    //Call<ThingsResponse> getThings();
 
    // Call<LoginResponse> userLogin(@Query("tagged") String tags);
 }
