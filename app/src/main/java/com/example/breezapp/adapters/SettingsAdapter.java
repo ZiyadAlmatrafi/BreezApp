@@ -19,7 +19,6 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
     private Setting[] mSetting;
     Context context;
 
-
     // private OnOptionListener mOnOptionListener;
 
 
@@ -66,8 +65,6 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-
                         Intent intent = new Intent(context, SettingsActivity.class);
                         intent.putExtra("option", textView.getText());
                         context.startActivity(intent);
