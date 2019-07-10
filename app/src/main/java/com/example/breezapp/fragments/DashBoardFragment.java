@@ -72,7 +72,6 @@ public class DashBoardFragment extends Fragment {
 
                 @Override
                 public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response) {
-                   String jsonString;
                     if (response.isSuccessful()) {
                             Log.e("Correct",""+ response.body().getClass());
 
