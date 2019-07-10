@@ -12,13 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.breezapp.models.Device;
 import com.example.breezapp.R;
+import com.example.breezapp.models.Thing;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.ViewHolder> {
-    private Device[] mDevice;
+   // private ArrayList<Thing> thingList;
+
+    private List<Thing> thingList;
     Context context;
 
-    public DashBoardAdapter(Device[] mDevice, Context context) {
-        this.mDevice = mDevice;
+    public DashBoardAdapter(List<Thing> thingList, Context context) {
+        this.thingList = thingList;
         this.context = context;
     }
 
@@ -26,23 +32,25 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.dashborad, null);
+                .inflate(R.layout.dashborad,parent, false);
 
 
-        return new ViewHolder(v);
+        return new DashBoardAdapter.ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView.setText(mDevice[position].getName());
-        holder.imageView.setImageResource(mDevice[position].getImg());
+        Thing thing = thingList.get(position);
+
+        holder.textView.setText(thing.getLabel());
+        //holder.imageView.setImageResource(mDevice[position].getImg());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return mDevice.length;
+        return thingList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

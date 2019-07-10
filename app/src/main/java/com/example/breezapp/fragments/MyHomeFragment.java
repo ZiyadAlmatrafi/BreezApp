@@ -15,11 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.breezapp.R;
 import com.example.breezapp.adapters.RoomsAdapter;
 import com.example.breezapp.models.Rooms;
-import com.example.breezapp.models.ThingsList;
-import com.example.breezapp.rest.RestClient;
-import com.example.breezapp.rest.ThingsAPIService;
+import com.example.breezapp.models.Thing;
+import com.example.breezapp.rest.RestThing;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,9 +31,7 @@ import retrofit2.Response;
  */
 public class MyHomeFragment extends Fragment  {
 
-    TextView textView;
-    private static final String TAG = MyHomeFragment.class.getSimpleName();
-    ThingsAPIService apiService;
+    TextView all_things_total;
 
 
     RecyclerView recyclerView;
@@ -47,9 +45,9 @@ public class MyHomeFragment extends Fragment  {
         View view = inflater.inflate(R.layout.fragment_my_home, container, false);
 
 
-        //apiService = RestClient.getClient().create(ThingsAPIService.class);
-        textView = (TextView)view.findViewById(R.id.all_things);
-//        fetchThingsList();
+        all_things_total = (TextView)view.findViewById(R.id.all_things);
+        fetchAllThings();
+
 
         layoutManager = (new GridLayoutManager(getContext(),2));
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
@@ -70,23 +68,41 @@ public class MyHomeFragment extends Fragment  {
         return view;
     }
 
-/*
-    private void fetchThingsList() {
-        Call<ThingsList> call = apiService.fetchThings("android");
-        call.enqueue(new Callback<ThingsList>() {
+
+    private void fetchAllThings() {try {
+
+
+        Call<List<Thing>> call = RestThing.getInstance().getApi().getThings();
+
+        call.enqueue(new Callback<List<Thing>>() {
+
             @Override
-            public void onResponse(Call<ThingsList> call, Response<ThingsList> response) {
-                Log.d(TAG, "Total number of questions fetched : " + response.body().getThings().size());
-                textView.setText(""+response.body().getThings().size());
+            public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response) {
+
+                if (response.isSuccessful()) {
+
+                    Log.e("response",response.code()+"");
+
+                    Log.e("response",""+response.body().size());
+
+                    all_things_total.setText(""+response.body().size()+""+" devices");
+
+                }
             }
 
             @Override
-            public void onFailure(Call<ThingsList> call, Throwable t) {
-                Log.e(TAG, "Got error : " + t.getLocalizedMessage());
+            public void onFailure(Call<List<Thing>> call, Throwable t) {
+                Log.e("Not Correct 2","Not Working");
+
             }
         });
+
+
+    } catch (Exception e) {
+        Log.e("e","ERROOOOOOOOOOOOR");
     }
 
-*/
+    }
+
 }
 

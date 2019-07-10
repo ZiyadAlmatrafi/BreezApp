@@ -2,8 +2,6 @@ package com.example.breezapp.rest;
 
 import android.util.Base64;
 
-import com.google.android.gms.common.api.Api;
-
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -13,16 +11,14 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RestClient {
-    private static RestClient mInstance;
-    private static final String AUTH = "Basic " + Base64.encodeToString(("adsf1234@hotmail.com:asdf1234").getBytes(), Base64.NO_WRAP);
-
-    public static final String BASE_URL = "https://mysmartbreez.mircloud.host";
+public class RestThing {   private static RestThing mInstance;
     private static Retrofit retrofit ;
-    private static final String AU = "application/json";
+    public static final String BASE_URL = "https://mysmartbreez.mircloud.host";
+    private static final String AUTH = "Basic " + Base64.encodeToString(("adsf1234@hotmail.com:asdf1234").getBytes(), Base64.NO_WRAP);
     private static final String AUT = "application/json";
 
-    private  RestClient() {
+
+    private  RestThing() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(
                         new Interceptor() {
@@ -31,14 +27,16 @@ public class RestClient {
                                 Request original = chain.request();
 
                                 Request.Builder requestBuilder = original.newBuilder()
+                                        // .addHeader("Content-Type", AUT)
+
                                         .addHeader("Authorization", AUTH)
-                                        .addHeader("Content-Type", AU)
-                                        .addHeader("Accept", AUT)
+                                        //.addHeader("Accept", AUT)
                                         .method(original.method(), original.body());
 
                                 Request request = requestBuilder.build();
                                 return chain.proceed(request);
                             }
+
                         }
                 ).build();
 
@@ -49,11 +47,11 @@ public class RestClient {
                 .build();
 
 
-}
+    }
 
-    public static synchronized RestClient getInstance() {
+    public static synchronized RestThing getInstance() {
         if (mInstance == null) {
-            mInstance = new RestClient();
+            mInstance = new RestThing();
         }
         return mInstance;
     }
@@ -61,6 +59,4 @@ public class RestClient {
     public static LoginAPIService getApi() {
         return retrofit.create(LoginAPIService.class);
     }
-
-
 }

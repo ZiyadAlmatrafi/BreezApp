@@ -4,10 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -18,13 +14,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.example.breezapp.R;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.breezapp.activities.AuthenticationActivity;
-import com.example.breezapp.activities.HomeActivity;
 import com.example.breezapp.R;
+import com.example.breezapp.activities.HomeActivity;
 import com.example.breezapp.models.LoginResponse;
 import com.example.breezapp.models.User;
 import com.example.breezapp.rest.LoginAPIService;
@@ -34,8 +28,6 @@ import com.example.breezapp.storage.SharedPrefManager;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static android.content.ContentValues.TAG;
 
 
 /**
@@ -48,7 +40,7 @@ public class SignInFragment extends Fragment {
     private EditText editTextEmail;
     private EditText editTextPassword;
 
-    LoginAPIService apiService;
+   // LoginAPIService apiService;
     private static final String TAG = SignInFragment.class.getSimpleName();
 
     public SignInFragment() {
@@ -116,8 +108,10 @@ public class SignInFragment extends Fragment {
             call.enqueue(new Callback<LoginResponse>() {
                 @Override
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                    LoginResponse loginResponse = response.body();
+                  // LoginResponse loginResponse = response.body();
+
                     Log.e("responce",response.code()+"");
+                   // Log.e("responce",response.body()+"");
                     if (response.code() == 200) {
                      Toast.makeText(getContext(), "Go Login", Toast.LENGTH_SHORT).show();
                         User user = new User(username,password);
