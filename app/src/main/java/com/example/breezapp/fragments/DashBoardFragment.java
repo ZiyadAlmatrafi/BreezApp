@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.breezapp.adapters.DashBoardAdapter;
 import com.example.breezapp.R;
@@ -61,7 +62,7 @@ public class DashBoardFragment extends Fragment {
         return v;
 }
 
-    public void response() {
+    public void response()  {
         try {
 
 
@@ -71,30 +72,36 @@ public class DashBoardFragment extends Fragment {
 
 
                 @Override
-                public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response) {
-                    if (response.isSuccessful()) {
-                            Log.e("Correct",""+ response.body().getClass());
+                public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response)  {
 
-                         List<Thing> t = response.body();
-                         for (int i = 0 ; i<t.size();i++) {
-                             Log.e("Correct2", "" + t.get(i).getLabel());
-                             showIt(t);
+                    if (response.isSuccessful()) {
+                        Log.e("Response", "Response code: " + response.code());
+
+                        List<Thing> t = response.body();
+
+                         for (int i = 0 ; i<10;i++) {
+                             Log.i("Correct", "" + t.get(i).getLabel());
+
                          }
 
+
+                        showIt(t);
+                    }else {
+                        Toast.makeText(getContext(), " Error connecting to the server", Toast.LENGTH_SHORT).show();
 
                     }
                 }
 
                 @Override
                 public void onFailure(Call<List<Thing>> call, Throwable t) {
-                    Log.e("Not Correct 2","Not Working");
+                    Log.e("Not Correct ","Not Working");
 
                 }
             });
 
 
         } catch (Exception e) {
-            Log.e("e","ERROOOOOOOOOOOOR");
+            Log.e("e","ERROR");
         }
 
     }

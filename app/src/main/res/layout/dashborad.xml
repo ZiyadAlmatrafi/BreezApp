@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:src="@drawable/lamp"
                     android:id="@+id/img_dash"
                     android:layout_width="69dp"
                     android:layout_height="71dp"
