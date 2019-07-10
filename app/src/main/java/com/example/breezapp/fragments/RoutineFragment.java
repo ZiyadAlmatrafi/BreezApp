@@ -20,26 +20,16 @@ import java.util.ArrayList;
 
 public class RoutineFragment extends Fragment  {
 
-    TextView textView;
-    private static final String TAG = RoutineFragment.class.getSimpleName();
-
-
 
     RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-    ArrayList<Routines> arrayList = new ArrayList<>();
-
-   //int [] im_id={R.drawable.morning,R.drawable.night};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
 
-
-
-
         View view = inflater.inflate(R.layout.fragment_routine, container, false);
+
         layoutManager = (new GridLayoutManager(getContext(),2));
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
@@ -56,7 +46,6 @@ public class RoutineFragment extends Fragment  {
 
 
         RoutinesAdapter mAdapter =new RoutinesAdapter(routines,getContext());
-        //adapter= new RoomsAdapter(arrayList);
         recyclerView.setAdapter(mAdapter);
         return view;
     }
