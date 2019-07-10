@@ -4,9 +4,11 @@ import java.util.List;
 
 public class ThingsResponse {
 
-    public Thing[] things;
+    List<Thing> things;
 
-    public Thing[] getThings() {
+    public List<Thing> getThings() {
         return things;
     }
 }
+
+

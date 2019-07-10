@@ -55,56 +55,10 @@ public class DashBoardFragment extends Fragment {
 */
 
 
-        response();
 
 
         return v;
 }
 
-    public void response() {
-        try {
-
-
-            Call<List<Thing>> call = RestThing.getInstance().getApi().getThings();
-            Log.e("call", "entered method");
-
-            call.enqueue(new Callback<List<Thing>>() {
-
-                @Override
-                public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response) {
-                   String jsonString;
-                    if (response.isSuccessful()) {
-                            Log.e("Correct",""+ response.body().getClass());
-
-                         List<Thing> t = response.body();
-                         for (int i = 0 ; i<t.size();i++) {
-                             Log.e("Correct2", "" + t.get(i).getLabel());
-                             showIt(t);
-                         }
-
-
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<List<Thing>> call, Throwable t) {
-                    Log.e("Not Correct 2","Not Working");
-
-                }
-            });
-
-
-        } catch (Exception e) {
-            Log.e("e","ERROOOOOOOOOOOOR");
-        }
-
-    }
-
-    private void showIt(List<Thing> response) {
-
-
-         mAdapter = new DashBoardAdapter(response,getContext());
-        recyclerView.setAdapter(mAdapter);
-    }
 
 }
