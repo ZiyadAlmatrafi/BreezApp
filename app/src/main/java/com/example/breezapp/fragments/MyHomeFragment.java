@@ -32,8 +32,6 @@ import retrofit2.Response;
 public class MyHomeFragment extends Fragment  {
 
     TextView all_things_total;
-
-
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
@@ -41,13 +39,10 @@ public class MyHomeFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-
         View view = inflater.inflate(R.layout.fragment_my_home, container, false);
-
 
         all_things_total = (TextView)view.findViewById(R.id.all_things);
         fetchAllThings();
-
 
         layoutManager = (new GridLayoutManager(getContext(),2));
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
@@ -56,11 +51,14 @@ public class MyHomeFragment extends Fragment  {
 
         Rooms d1 = new Rooms(R.drawable.living_room_icon);
         Rooms d2 = new Rooms(R.drawable.bathroom_icon);
+        Rooms d3 = new Rooms(R.drawable.bedroom_icon);
 
         ArrayList<Rooms> rooms = new ArrayList<Rooms>();
 
         rooms.add(d1);
         rooms.add(d2);
+        rooms.add(d3);
+
 
 
         RoomsAdapter mAdapter =new RoomsAdapter(rooms,getContext());
@@ -105,4 +103,3 @@ public class MyHomeFragment extends Fragment  {
     }
 
 }
-

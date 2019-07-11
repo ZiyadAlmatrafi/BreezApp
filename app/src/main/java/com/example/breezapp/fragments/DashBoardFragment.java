@@ -29,7 +29,6 @@ public class DashBoardFragment extends Fragment {
     private List<Thing> thingList;
     private RecyclerView recyclerView;
     private DashBoardAdapter mAdapter;
-
     // private ArrayList<Thing> data;
 
 
