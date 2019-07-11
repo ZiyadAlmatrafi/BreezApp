@@ -27,19 +27,19 @@ import retrofit2.Response;
 public class DashBoardFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private List<Thing> thingList;
+    private List<Thing> t;
     private RecyclerView recyclerView;
     private DashBoardAdapter mAdapter;
 
     // private ArrayList<Thing> data;
 
 
-
+/*
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
+*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -63,46 +63,39 @@ public class DashBoardFragment extends Fragment {
 }
 
     public void response()  {
-        try {
+
+            try {
+                Call<List<Thing>> call = RestThing.getInstance().getApi().getThings();
+
+                call.enqueue(new Callback<List<Thing>>() {
 
 
-            Call<List<Thing>> call = RestThing.getInstance().getApi().getThings();
+                    @Override
+                    public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response) {
+                      //  Log.e("Response 1", "Response code: " + response.code());
 
-            call.enqueue(new Callback<List<Thing>>() {
+                        if (response.isSuccessful()) {
+                           // Log.e("Response 2", "Response code: " + response.code());
 
+                            t = response.body();
 
-                @Override
-                public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response)  {
+                            showIt(t);
+                        }
+                    }
 
-                    if (response.isSuccessful()) {
-                        Log.e("Response", "Response code: " + response.code());
-
-                        List<Thing> t = response.body();
-
-                         for (int i = 0 ; i<10;i++) {
-                             Log.i("Correct", "" + t.get(i).getLabel());
-
-                         }
-
-
-                        showIt(t);
-                    }else {
-                        Toast.makeText(getContext(), " Error connecting to the server", Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onFailure(Call<List<Thing>> call, Throwable t) {
+                        Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
+                       // Log.e("Not Correct ", "Not Working");
+                        response();
 
                     }
+                });
+
+            }catch (Exception e){
+                Log.e("Error", ""+e);
                 }
 
-                @Override
-                public void onFailure(Call<List<Thing>> call, Throwable t) {
-                    Log.e("Not Correct ","Not Working");
-
-                }
-            });
-
-
-        } catch (Exception e) {
-            Log.e("e","ERROR");
-        }
 
     }
 
@@ -111,7 +104,7 @@ public class DashBoardFragment extends Fragment {
 
 
          mAdapter = new DashBoardAdapter(response,getContext());
-        recyclerView.setAdapter(mAdapter);
+         recyclerView.setAdapter(mAdapter);
     }
 
 }
