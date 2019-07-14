@@ -49,15 +49,24 @@ public class MyHomeFragment extends Fragment  {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
-        Rooms d1 = new Rooms(R.drawable.living_room_icon);
-        Rooms d2 = new Rooms(R.drawable.bathroom_icon);
-        Rooms d3 = new Rooms(R.drawable.bedroom_icon);
+        Rooms d1 = new Rooms(R.drawable.bedroom);
+        Rooms d2 = new Rooms(R.drawable.livingroom);
+        Rooms d3 = new Rooms(R.drawable.bathtub);
+        Rooms d4 = new Rooms(R.drawable.kitchen);
+        Rooms d5 = new Rooms(R.drawable.studydesk);
+        Rooms d6 = new Rooms(R.drawable.stock);
 
         ArrayList<Rooms> rooms = new ArrayList<Rooms>();
 
         rooms.add(d1);
         rooms.add(d2);
         rooms.add(d3);
+        rooms.add(d4);
+        rooms.add(d5);
+        rooms.add(d6);
+
+
+
 
 
 
@@ -83,7 +92,7 @@ public class MyHomeFragment extends Fragment  {
 
                     Log.e("response",""+response.body().size());
 
-                    all_things_total.setText(""+response.body().size()+""+" devices");
+                    all_things_total.setText(""+response.body().size());
 
                 }
             }
