@@ -65,7 +65,7 @@ public class DashBoardFragment extends Fragment {
     public void response()  {
 
             try {
-                Call<List<Thing>> call = RestThing.getInstance().getApi().getThings();
+                Call<List<Thing>> call = RestThing.getInstance().getApi().getInbox();
 
                 call.enqueue(new Callback<List<Thing>>() {
 
@@ -75,7 +75,7 @@ public class DashBoardFragment extends Fragment {
                       //  Log.e("Response 1", "Response code: " + response.code());
 
                         if (response.isSuccessful()) {
-                           // Log.e("Response 2", "Response code: " + response.code());
+                            Log.e("Response 2", "Response code: " + response.code());
 
                             t = response.body();
 

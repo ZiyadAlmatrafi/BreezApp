@@ -66,6 +66,7 @@ public class MyHomeFragment extends Fragment  {
         RoomsAdapter mAdapter =new RoomsAdapter(rooms,getContext());
         recyclerView.setAdapter(mAdapter);
         return view;
+
     }
 
 
@@ -85,7 +86,7 @@ public class MyHomeFragment extends Fragment  {
 
                     Log.e("response",""+response.body().size());
 
-                    all_things_total.setText(""+response.body().size()+""+" devices");
+                    all_things_total.setText(""+response.body().size()+"");
 
                 }
             }

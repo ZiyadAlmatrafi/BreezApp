@@ -32,6 +32,8 @@ public interface LoginAPIService {
     @GET("/rest/things")
     Call<List<Thing>> getThings();
 
+    @GET("/rest/inbox")
+    Call<List<Thing>> getInbox();
 
    // Call<LoginResponse> userLogin(@Query("tagged") String tags);
 }
