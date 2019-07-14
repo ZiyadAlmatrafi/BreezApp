@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.breezapp.fragments.AboutUsFragment;
 import com.example.breezapp.fragments.AccountFragment;
 import com.example.breezapp.fragments.HomesHubsFragment;
 import com.example.breezapp.fragments.ManageSharedDevicesFragment;
@@ -42,8 +43,12 @@ public class SettingsActivity extends AppCompatActivity {
                     setFragment(new ManageSharedDevicesFragment());
                     break;
                 case "Manage third party accounts":
-                    Toast.makeText(getApplicationContext(), "Manage shared devices", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Manage third accounts", Toast.LENGTH_SHORT).show();
                     setFragment(new ManageThirdAccountFragment());
+                    break;
+                case "About us":
+                    Toast.makeText(getApplicationContext(), "About us", Toast.LENGTH_SHORT).show();
+                    setFragment(new AboutUsFragment());
                     break;
 
 

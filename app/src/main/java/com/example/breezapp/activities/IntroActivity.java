@@ -26,9 +26,9 @@ public class IntroActivity extends AppIntro {
         } else {
 
 
-            addSlide(AppIntroFragment.newInstance("Step 1", "Plug to the Electricity", R.drawable.electricity, Color.rgb(18, 167, 156)));
-            addSlide(AppIntroFragment.newInstance("Step 2", "Plug the Ethernet", R.drawable.ethernet, Color.rgb(18, 167, 156)));
-            addSlide(AppIntroFragment.newInstance("Good Work", "You Are Ready", R.drawable.breez_logo_white, Color.rgb(18, 167, 156)));
+            addSlide(AppIntroFragment.newInstance("Step 1", "Plug to the Electricity", R.drawable.cable, Color.rgb(18, 167, 156)));
+            addSlide(AppIntroFragment.newInstance("Step 2", "Plug the Ethernet", R.drawable.ethernet2, Color.rgb(18, 167, 156)));
+            addSlide(AppIntroFragment.newInstance("Good Work", "You Are Ready", R.drawable.checked, Color.rgb(18, 167, 156)));
 
         }
     }
@@ -37,6 +37,7 @@ public class IntroActivity extends AppIntro {
         super.onSkipPressed(currentFragment);
         startActivity(new Intent(this,OnBoardingActivity.class));
         finish();
+
 
 
     }
