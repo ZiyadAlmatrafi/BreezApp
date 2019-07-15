@@ -1,11 +1,13 @@
 package com.example.breezapp.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -29,7 +31,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyHomeFragment extends Fragment  {
+public class MyHomeFragment extends Fragment {
 
     TextView all_things_total;
     RecyclerView recyclerView;
@@ -49,26 +51,20 @@ public class MyHomeFragment extends Fragment  {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
-        Rooms d1 = new Rooms(R.drawable.bedroom);
-        Rooms d2 = new Rooms(R.drawable.livingroom);
-        Rooms d3 = new Rooms(R.drawable.bathtub);
-        Rooms d4 = new Rooms(R.drawable.kitchen);
-        Rooms d5 = new Rooms(R.drawable.studydesk);
-        Rooms d6 = new Rooms(R.drawable.stock);
+        Rooms d1 = new Rooms(R.drawable.bedroom,"9qDrllk0");
+        Rooms d2 = new Rooms(R.drawable.livingroom,"NqWOoHRY");
+        Rooms d3 = new Rooms(R.drawable.bathtub,"ucl6pDuO");
+        Rooms d4 = new Rooms(R.drawable.kitchen,"yDe4ehx7");
+        Rooms d5 = new Rooms(R.drawable.studydesk,"");
+        Rooms d6 = new Rooms(R.drawable.stock,"");
 
         ArrayList<Rooms> rooms = new ArrayList<Rooms>();
-
         rooms.add(d1);
         rooms.add(d2);
         rooms.add(d3);
         rooms.add(d4);
         rooms.add(d5);
         rooms.add(d6);
-
-
-
-
-
 
         RoomsAdapter mAdapter =new RoomsAdapter(rooms,getContext());
         recyclerView.setAdapter(mAdapter);
@@ -106,7 +102,7 @@ public class MyHomeFragment extends Fragment  {
 
 
     } catch (Exception e) {
-        Log.e("e","ERROOOOOOOOOOOOR");
+        Log.e("e","ERROR");
     }
 
     }

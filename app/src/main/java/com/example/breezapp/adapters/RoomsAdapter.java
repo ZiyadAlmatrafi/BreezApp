@@ -7,12 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.breezapp.activities.RoomsActivity;
 import com.example.breezapp.R;
+import com.example.breezapp.activities.RoomActivity;
 import com.example.breezapp.models.Rooms;
 
 
@@ -21,14 +22,10 @@ import java.util.ArrayList;
 
 public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.MyViewHolder>  {
 
-  //  ArrayList<Rooms> arrayList = new ArrayList<>();
     private Context context;
-    private ArrayList<Rooms>  rooms;
+    private ArrayList<Rooms> rooms;
 
-  /*  public RoomsAdapter(ArrayList<Rooms> rooms){
-        this.arrayList=rooms;
-    }
-*/
+
     public RoomsAdapter(ArrayList<Rooms> rooms, Context context) {
         this.context=context;
         this.rooms=rooms;
@@ -47,8 +44,9 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.MyViewHolder
     //Binding: The process of preparing a child view to display
     // data corresponding to a position within the adapter.
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        // position is The position of a data item within an Adapter.
         holder.mImageView.setImageResource(rooms.get(position).getImg_id());
+
+
 
     }
 
@@ -61,6 +59,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
+        public TextView roomType;
 
 
         public MyViewHolder(View itemView) {
@@ -69,9 +68,10 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.MyViewHolder
             mImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.e("roomadapter","inside on click");
-                    Intent intent = new Intent(context, RoomsActivity.class);
+                    Log.e("roomsadapter","TEST");
+                    Intent intent = new Intent(context, RoomActivity.class);
                     intent.putExtra("option", mImageView.getId());
+                    intent.putExtra("position", getAdapterPosition());
                     context.startActivity(intent);
                 }
             });

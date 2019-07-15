@@ -30,8 +30,6 @@ public class DashBoardFragment extends Fragment {
     private List<Thing> t;
     private RecyclerView recyclerView;
     private DashBoardAdapter mAdapter;
-    // private ArrayList<Thing> data;
-
 
 /*
     @Override

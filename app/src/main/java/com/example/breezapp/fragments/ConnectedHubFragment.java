@@ -19,19 +19,6 @@ Button foundButton;
 Button notFoundButton;
 
 
-   /* @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(ConnectedHubFragment.this, AuthenticationActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        },SPLASH);
-    }
-*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,26 +49,5 @@ Button notFoundButton;
         });
 
         return v;
-    }
-
-
-    /**
-     * A simple {@link Fragment} subclass.
-     */
-    public static class BathRoomFragment extends Fragment {
-
-
-        public BathRoomFragment() {
-            // Required empty public constructor
-        }
-
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
-            return inflater.inflate(R.layout.fragment_bath_room, container, false);
-        }
-
     }
 }
