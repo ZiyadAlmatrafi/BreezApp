@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.breezapp.fragments.AboutUsFragment;
 import com.example.breezapp.fragments.AccountFragment;
+import com.example.breezapp.fragments.FeedBackFragment;
 import com.example.breezapp.fragments.HomesHubsFragment;
 import com.example.breezapp.fragments.ManageSharedDevicesFragment;
 import com.example.breezapp.fragments.ManageThirdAccountFragment;
@@ -31,23 +32,27 @@ public class SettingsActivity extends AppCompatActivity {
         if (bundle!=null){
             switch (option){
                 case "Homes and hubs settings":
-                    Toast.makeText(getApplicationContext(), "Homes", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getApplicationContext(), "Homes", Toast.LENGTH_SHORT).show();
                     setFragment(new HomesHubsFragment());
                     break;
                 case "Account":
-                    Toast.makeText(getApplicationContext(), "Account", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getApplicationContext(), "Account", Toast.LENGTH_SHORT).show();
                     setFragment(new AccountFragment());
                     break;
                 case "Manage shared devices":
-                    Toast.makeText(getApplicationContext(), "Manage shared devices", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getApplicationContext(), "Manage shared devices", Toast.LENGTH_SHORT).show();
                     setFragment(new ManageSharedDevicesFragment());
                     break;
                 case "Manage third party accounts":
-                    Toast.makeText(getApplicationContext(), "Manage third accounts", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getApplicationContext(), "Manage third accounts", Toast.LENGTH_SHORT).show();
                     setFragment(new ManageThirdAccountFragment());
                     break;
+                case "Feedback":
+                    //Toast.makeText(getApplicationContext(), "About us", Toast.LENGTH_SHORT).show();
+                    setFragment(new FeedBackFragment());
+                    break;
                 case "About us":
-                    Toast.makeText(getApplicationContext(), "About us", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getApplicationContext(), "About us", Toast.LENGTH_SHORT).show();
                     setFragment(new AboutUsFragment());
                     break;
 

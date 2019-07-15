@@ -30,7 +30,6 @@ public class RoutinesActivity extends AppCompatActivity {
                     setFragment(new NightFragment());
                     break;
 
-
             }
         }
 
