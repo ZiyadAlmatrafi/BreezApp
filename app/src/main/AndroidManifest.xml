@@ -27,7 +27,6 @@
         <activity android:name=".activities.SettingsActivity"></activity>
 
         <activity android:name=".activities.RoutinesActivity"></activity>
-        <activity android:name=".activities.RoomsActivity" />
 
         <activity android:name=".activities.IntroActivity" />
 

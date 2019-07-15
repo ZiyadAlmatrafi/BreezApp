@@ -38,28 +38,49 @@ public class FeedBackFragment extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_feed_back, container, false);
         mSubject = (EditText) v.findViewById(R.id.subject);
-
+        mMessage = (EditText) v.findViewById(R.id.messageBody);
         btnSend = (Button)v.findViewById(R.id.btnSend);
-        /*
+
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String to = "ziad12441@gmail.com";
-               // String to = ((EditText)view.findViewById(R.id.txtTo)).getText().toString();
-                String sub = ((EditText)view.findViewById(R.id.subject)).getText().toString();
-                mSubject = (EditText) v.findViewById(R.id.subject).getTe
-                String mess = ((EditText)view.findViewById(R.id.messageBody)).getText().toString();
+                checkFeedBack();
 
-                Intent mail = new Intent(Intent.ACTION_SEND);
-                mail.putExtra(Intent.EXTRA_EMAIL,new String[]{to});
-                mail.putExtra(Intent.EXTRA_SUBJECT, sub);
-                mail.putExtra(Intent.EXTRA_TEXT, mess);
-                mail.setType("message/rfc822");
-                startActivity(Intent.createChooser(mail, "Send email via:"));
             }
         });
-        */
+
         return v;
+    }
+
+
+    private void checkFeedBack() {
+
+        final String subject = mSubject.getText().toString().trim();
+        final String message = mMessage.getText().toString().trim();
+
+        if (subject.isEmpty()) {
+            mSubject.setError("Subject is required");
+            mSubject.requestFocus();
+            return;
+        }
+        if (message.isEmpty()) {
+            mMessage.setError("Message is required");
+            mMessage.requestFocus();
+            return;
+        }
+
+        String to = "ziad12441@gmail.com";
+        String sub = mSubject.getText().toString();
+        String mess = mMessage.getText().toString();
+
+        Intent mail = new Intent(Intent.ACTION_SEND);
+        mail.putExtra(Intent.EXTRA_EMAIL,new String[]{to});
+        mail.putExtra(Intent.EXTRA_SUBJECT, sub);
+        mail.putExtra(Intent.EXTRA_TEXT, mess);
+
+        mail.setType("message/rfc822");
+        startActivity(Intent.createChooser(mail, "Send email via:"));
+
     }
 
 

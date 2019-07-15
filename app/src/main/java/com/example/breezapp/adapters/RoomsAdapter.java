@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.breezapp.activities.RoomsActivity;
 import com.example.breezapp.R;
 import com.example.breezapp.models.Rooms;
 
@@ -69,10 +68,7 @@ public class RoomsAdapter extends RecyclerView.Adapter<RoomsAdapter.MyViewHolder
             mImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.e("roomadapter","inside on click");
-                    Intent intent = new Intent(context, RoomsActivity.class);
-                    intent.putExtra("option", mImageView.getId());
-                    context.startActivity(intent);
+
                 }
             });
         }
