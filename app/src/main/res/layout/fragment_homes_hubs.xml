@@ -19,6 +19,7 @@
         android:text="Address"
         android:textColor="#000000"
         android:textStyle="bold"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +65,7 @@
                 android:text="Home 1"
                 android:textColor="#000000"
                 android:textStyle="bold"
+                android:typeface="serif"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,6 +79,7 @@
                 android:text="1 hubs"
                 android:textColor="#000000"
                 android:textSize="10dp"
+                android:typeface="serif"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
@@ -90,6 +93,7 @@
                 android:text="17 Devices"
                 android:textColor="#000000"
                 android:textSize="10dp"
+                android:typeface="serif"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
@@ -109,6 +113,7 @@
         android:text="Connected hubs"
         android:textColor="#000000"
         android:textStyle="bold"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
