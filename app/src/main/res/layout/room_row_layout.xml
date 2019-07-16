@@ -27,7 +27,6 @@
             android:layout_height="100dp"
             android:padding="6dp"
             android:scaleType="fitXY"
-            android:src="@drawable/bedroom"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.47"

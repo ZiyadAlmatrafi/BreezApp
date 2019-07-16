@@ -31,19 +31,14 @@ public class DashBoardFragment extends Fragment {
     private RecyclerView recyclerView;
     private DashBoardAdapter mAdapter;
 
-/*
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-*/
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dash_board, container, false);
 
          recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_dash);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         /*
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_dash);
@@ -61,47 +56,45 @@ public class DashBoardFragment extends Fragment {
 
     public void response()  {
 
-            try {
-                Call<List<Thing>> call = RestThing.getInstance().getApi().getInbox();
+    try {
+        Call<List<Thing>> call = RestThing.getInstance().getApi().getInbox();
 
-                call.enqueue(new Callback<List<Thing>>() {
+        call.enqueue(new Callback<List<Thing>>() {
 
 
-                    @Override
-                    public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response) {
-                      //  Log.e("Response 1", "Response code: " + response.code());
+            @Override
+            public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response) {
+                //  Log.e("Response 1", "Response code: " + response.code());
 
-                        if (response.isSuccessful()) {
-                            Log.e("Response 2", "Response code: " + response.code());
+                if (response.isSuccessful()) {
+                    Log.e("Response 2", "Response code: " + response.code());
 
-                            t = response.body();
+                    t = response.body();
 
-                            showIt(t);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<List<Thing>> call, Throwable t) {
-                        Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
-                       // Log.e("Not Correct ", "Not Working");
-                        response();
-
-                    }
-                });
-
-            }catch (Exception e){
-                Log.e("Error", ""+e);
+                    showIt(t);
                 }
+            }
 
+            @Override
+            public void onFailure(Call<List<Thing>> call, Throwable t) {
+                Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
+                // Log.e("Not Correct ", "Not Working");
+                response();
 
+            }
+        });
+
+    }catch (Exception e){
+        Log.e("Error", ""+e);
     }
+
+}
 
 
     private void showIt(List<Thing> response) {
 
-
-         mAdapter = new DashBoardAdapter(response,getContext());
-         recyclerView.setAdapter(mAdapter);
+        mAdapter = new DashBoardAdapter(response,getContext());
+        recyclerView.setAdapter(mAdapter);
     }
 
 }

@@ -7,14 +7,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.breezapp.fragments.AboutUsFragment;
 import com.example.breezapp.fragments.AccountFragment;
 import com.example.breezapp.fragments.FeedBackFragment;
 import com.example.breezapp.fragments.HomesHubsFragment;
 import com.example.breezapp.fragments.ManageSharedDevicesFragment;
-import com.example.breezapp.fragments.ManageThirdAccountFragment;
 import com.example.breezapp.R;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -42,10 +40,6 @@ public class SettingsActivity extends AppCompatActivity {
                 case "Manage shared devices":
                    // Toast.makeText(getApplicationContext(), "Manage shared devices", Toast.LENGTH_SHORT).show();
                     setFragment(new ManageSharedDevicesFragment());
-                    break;
-                case "Manage third party accounts":
-                   // Toast.makeText(getApplicationContext(), "Manage third accounts", Toast.LENGTH_SHORT).show();
-                    setFragment(new ManageThirdAccountFragment());
                     break;
                 case "Feedback":
                     //Toast.makeText(getApplicationContext(), "About us", Toast.LENGTH_SHORT).show();
