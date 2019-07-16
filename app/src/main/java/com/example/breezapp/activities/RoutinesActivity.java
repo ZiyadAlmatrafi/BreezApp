@@ -54,7 +54,7 @@ public class RoutinesActivity extends AppCompatActivity {
                 routineName.setText("Study Mode");
                 break;
             case 5:
-                routineType.setImageResource(R.drawable.popcorn);
+                routineType.setImageResource(R.drawable.globe);
                 routineName.setText("Travel Mode");
                 break;
         }
