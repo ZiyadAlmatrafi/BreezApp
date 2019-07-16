@@ -4,10 +4,10 @@ public class Routines {
 
     private int img_id;
 
-    public Routines(int img_id)
-    {
 
-        setImg_id(img_id);
+
+    public Routines(int img_id) {
+        this.img_id = img_id;
 
     }
 
@@ -18,4 +18,12 @@ public class Routines {
     public void setImg_id(int img_id) {
         this.img_id = img_id;
     }
+
+
 }
+
+
+
+
+
+

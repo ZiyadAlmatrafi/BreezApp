@@ -41,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
                    // Toast.makeText(getApplicationContext(), "Manage shared devices", Toast.LENGTH_SHORT).show();
                     setFragment(new ManageSharedDevicesFragment());
                     break;
+
                 case "Feedback":
                     //Toast.makeText(getApplicationContext(), "About us", Toast.LENGTH_SHORT).show();
                     setFragment(new FeedBackFragment());

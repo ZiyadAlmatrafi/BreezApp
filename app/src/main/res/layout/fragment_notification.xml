@@ -9,12 +9,15 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/page_title"
-        android:layout_width="401dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="386dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:background="#0AA092"
+        android:gravity="center"
         android:text="Notifications"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:textStyle="bold"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
