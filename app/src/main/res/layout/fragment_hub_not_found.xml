@@ -33,6 +33,7 @@
         android:layout_marginRight="8dp"
         android:gravity="center"
         android:text="Hub Not Found"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -49,6 +50,7 @@
         android:background="#12A79C"
         android:text="Try Again"
         android:textColor="#FFFFFF"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />

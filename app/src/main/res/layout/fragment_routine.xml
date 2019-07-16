@@ -20,7 +20,7 @@
         android:gravity="center"
         android:text="Routines"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
