@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.breezapp.R;
 import com.example.breezapp.fragments.NightFragment;
+import com.example.breezapp.fragments.RoutineEventFragment;
 
 public class RoutinesActivity extends AppCompatActivity {
 
@@ -29,33 +30,38 @@ public class RoutinesActivity extends AppCompatActivity {
         routineName =(TextView)findViewById(R.id.routineName);
 
         Intent intent = getIntent();
-        Bundle bundle;
-        bundle =  getIntent().getExtras();
+        Bundle bundle =  getIntent().getExtras();
         int option = bundle.getInt("position");
         switch (option){
             case 0:
                 routineType.setImageResource(R.drawable.thenight);
                 routineName.setText("Night Mode");
+                setFragment(new RoutineEventFragment());
                 break;
             case 1:
                 routineType.setImageResource(R.drawable.sunrise);
                 routineName.setText("Morning Mode");
+                setFragment(new RoutineEventFragment());
                 break;
             case 2:
                 routineType.setImageResource(R.drawable.confetti);
                 routineName.setText("Party Mode");
+                setFragment(new RoutineEventFragment());
                 break;
             case 3:
                 routineType.setImageResource(R.drawable.popcorn);
                 routineName.setText("Movie Mode");
+                setFragment(new RoutineEventFragment());
                 break;
             case 4:
                 routineType.setImageResource(R.drawable.book);
                 routineName.setText("Study Mode");
+                setFragment(new RoutineEventFragment());
                 break;
             case 5:
                 routineType.setImageResource(R.drawable.globe);
                 routineName.setText("Travel Mode");
+                setFragment(new RoutineEventFragment());
                 break;
         }
     }

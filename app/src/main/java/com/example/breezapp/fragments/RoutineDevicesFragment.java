@@ -17,11 +17,13 @@ import com.example.breezapp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RoutineEventFragment extends Fragment {
+public class RoutineDevicesFragment extends Fragment {
 
-    Button btn_devices;
 
-    public RoutineEventFragment() {
+    Button btn_event;
+
+
+    public RoutineDevicesFragment() {
         // Required empty public constructor
     }
 
@@ -32,20 +34,20 @@ public class RoutineEventFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-        View v = inflater.inflate(R.layout.fragment_routine_event, container, false);
+        View v = inflater.inflate(R.layout.fragment_routine_devices, container, false);
 
-        btn_devices = (Button) v.findViewById(R.id.btn_devices);
+        btn_event = (Button) v.findViewById(R.id.btn_event);
 
-        btn_devices.setOnClickListener(new View.OnClickListener() {
+        btn_event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Log.e("RoutineEventFragment","Switch to Routine Devices Fragment"+"");
+                Log.e("RoutineDevicesFragment","Switch to Routine Event Fragment"+"");
 
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
 
-                ft.replace(R.id.frame, new RoutineDevicesFragment());
+                ft.replace(R.id.frame, new RoutineEventFragment());
                 ft.addToBackStack(null);
                 ft.commit();
             }
@@ -55,4 +57,3 @@ public class RoutineEventFragment extends Fragment {
 
     }
 }
-
