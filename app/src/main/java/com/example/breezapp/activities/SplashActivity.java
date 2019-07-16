@@ -9,7 +9,7 @@ import android.os.Handler;
 import com.example.breezapp.R;
 
 public class SplashActivity extends AppCompatActivity {
-    private static int SPLASH = 500;
+    private static int SPLASH = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -45,7 +45,7 @@ public class SettingsFragment extends Fragment  {
         Setting s3 = new Setting("Manage shared devices");
         Setting s4 = new Setting("Manage third party accounts");
         Setting s5 = new Setting("Supported devices");
-        Setting s6 = new Setting("Connect devices guide");
+       // Setting s6 = new Setting("Connect devices guide");
         Setting s7 = new Setting("Feedback");
         Setting s8 = new Setting("About us");
 
@@ -56,7 +56,7 @@ public class SettingsFragment extends Fragment  {
                 new Setting(s3.getOption()),
                 new Setting(s4.getOption()),
                 new Setting(s5.getOption()),
-                new Setting(s6.getOption()),
+               // new Setting(s6.getOption()),
                 new Setting(s7.getOption()),
                 new Setting(s8.getOption())
 

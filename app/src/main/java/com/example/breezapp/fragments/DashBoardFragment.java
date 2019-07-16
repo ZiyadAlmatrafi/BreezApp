@@ -1,5 +1,8 @@
 package com.example.breezapp.fragments;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.breezapp.adapters.DashBoardAdapter;
@@ -30,7 +34,6 @@ public class DashBoardFragment extends Fragment {
     private List<Thing> t;
     private RecyclerView recyclerView;
     private DashBoardAdapter mAdapter;
-
 /*
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,6 +67,16 @@ public class DashBoardFragment extends Fragment {
             try {
                 Call<List<Thing>> call = RestThing.getInstance().getApi().getInbox();
 
+                // Set up progress before call
+                final ProgressDialog progressDoalog;
+                progressDoalog = new ProgressDialog(getContext());
+                progressDoalog.setMax(100);
+                progressDoalog.setMessage("Loading...");
+               // progressDoalog.setTitle("ProgressDialog bar example");
+                progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                // show it
+                progressDoalog.show();
+
                 call.enqueue(new Callback<List<Thing>>() {
 
 
@@ -72,6 +85,7 @@ public class DashBoardFragment extends Fragment {
                       //  Log.e("Response 1", "Response code: " + response.code());
 
                         if (response.isSuccessful()) {
+                            progressDoalog.dismiss();
                             Log.e("Response 2", "Response code: " + response.code());
 
                             t = response.body();
@@ -82,18 +96,23 @@ public class DashBoardFragment extends Fragment {
 
                     @Override
                     public void onFailure(Call<List<Thing>> call, Throwable t) {
-                        Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
-                       // Log.e("Not Correct ", "Not Working");
-                        response();
+                        progressDoalog.dismiss();
 
+                        Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
+                       /* AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setMessage("Connection lost")
+                                .setPositiveButton("Try again", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {*/
+
+                                        response();
+                                 /*   }
+                                });*/
                     }
                 });
 
             }catch (Exception e){
                 Log.e("Error", ""+e);
                 }
-
-
     }
 
 
