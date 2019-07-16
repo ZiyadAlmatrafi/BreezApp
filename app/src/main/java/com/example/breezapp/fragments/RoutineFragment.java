@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -18,7 +17,7 @@ import com.example.breezapp.R;
 import java.util.ArrayList;
 
 
-public class RoutineFragment extends Fragment  {
+public class RoutineFragment extends Fragment   {
 
 
     RecyclerView recyclerView;
@@ -36,13 +35,23 @@ public class RoutineFragment extends Fragment  {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
-        Routines d1 = new Routines(R.drawable.morning);
-        Routines d2 = new Routines(R.drawable.night);
+        Routines d1 = new Routines(R.drawable.thenight);
+        Routines d2 = new Routines(R.drawable.sunrise);
+        Routines d3 = new Routines(R.drawable.confetti);
+        Routines d4 = new Routines(R.drawable.popcorn);
+        Routines d5 = new Routines(R.drawable.book);
+        Routines d6 = new Routines(R.drawable.globe);
+
+
 
         ArrayList<Routines> routines = new ArrayList<Routines>();
 
         routines.add(d1);
         routines.add(d2);
+        routines.add(d3);
+        routines.add(d4);
+        routines.add(d5);
+        routines.add(d6);
 
 
         RoutinesAdapter mAdapter =new RoutinesAdapter(routines,getContext());

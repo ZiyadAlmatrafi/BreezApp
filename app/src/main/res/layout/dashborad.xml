@@ -70,6 +70,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="#0AA092"
                     android:text="Add"
+                    android:typeface="serif"
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

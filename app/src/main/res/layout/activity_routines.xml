@@ -6,4 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".activities.RoutinesActivity">
 
+    <TextView
+        android:id="@+id/routineName"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:textColor="#050505"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/routineType" />
+
+    <ImageView
+        android:id="@+id/routineType"
+        android:layout_width="84dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:foregroundGravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/thenight" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
