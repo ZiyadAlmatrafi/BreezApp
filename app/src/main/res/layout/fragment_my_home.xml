@@ -48,6 +48,7 @@
         android:text="All Devices"
         android:textColor="#F9F9F9"
         android:textSize="24sp"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="@+id/my_home_bar"
         app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
