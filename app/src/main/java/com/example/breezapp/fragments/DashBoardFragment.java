@@ -50,8 +50,7 @@ public class DashBoardFragment extends Fragment {
         recyclerView.setAdapter(mAdapter);
 */
 
-
-
+        response();
 
         return v;
 }
