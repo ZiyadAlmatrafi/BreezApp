@@ -1,45 +1,47 @@
 package com.example.breezapp.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class StateDescription {
 
 
-   private int minimum ;
-   private int maximum ;
-   private int step ;
-   private ArrayList<StateOption> options;
+
+    @SerializedName("pattern")
+    @Expose
+    private String pattern;
+    @SerializedName("readOnly")
+    @Expose
+    private Boolean readOnly;
+    @SerializedName("options")
+    @Expose
+    private List<Object> options = null;
 
 
-    public int getMinimum() {
-        return minimum;
+    public String getPattern() {
+        return pattern;
     }
 
-    public void setMinimum(int minimum) {
-        this.minimum = minimum;
+    public void setPattern(String pattern) {
+        this.pattern = pattern;
     }
 
-    public int getMaximum() {
-        return maximum;
+    public Boolean getReadOnly() {
+        return readOnly;
     }
 
-    public void setMaximum(int maximum) {
-        this.maximum = maximum;
+    public void setReadOnly(Boolean readOnly) {
+        this.readOnly = readOnly;
     }
 
-    public int getStep() {
-        return step;
-    }
-
-    public void setStep(int step) {
-        this.step = step;
-    }
-
-    public ArrayList<StateOption> getOptions() {
+    public List<Object> getOptions() {
         return options;
     }
 
-    public void setOptions(ArrayList<StateOption> options) {
+    public void setOptions(List<Object> options) {
         this.options = options;
     }
 }
