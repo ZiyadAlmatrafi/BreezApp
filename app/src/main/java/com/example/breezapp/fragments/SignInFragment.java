@@ -122,6 +122,7 @@ public class SignInFragment extends Fragment {
                        // i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                         startActivity(i);
+                        getActivity().finish();
 
                   }else {
                        Toast.makeText(getContext(), "Wrong pass or username", Toast.LENGTH_LONG).show();
@@ -140,7 +141,6 @@ public class SignInFragment extends Fragment {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
-
 
 }
 

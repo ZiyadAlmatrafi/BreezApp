@@ -37,6 +37,8 @@ public class HubFoundFragment extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), AuthenticationActivity.class);
                 startActivity(i);
+                getActivity().finish();
+
             }
         });
 
