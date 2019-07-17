@@ -17,8 +17,13 @@ import android.widget.Toast;
 
 import com.example.breezapp.R;
 import com.example.breezapp.adapters.AllThingsAdapter;
+import com.example.breezapp.models.Channel;
+import com.example.breezapp.models.LinkedItems;
 import com.example.breezapp.models.Thing;
 import com.example.breezapp.rest.RestThing;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.List;
 
@@ -77,9 +82,9 @@ public class AllThingsFragment extends Fragment {
                     if (response.isSuccessful()) {
                         progressDoalog.dismiss();
                         Log.e("Response 2", "Response code: " + response.code());
-                        Log.e("Response 2", "Response code: " + response.body());
 
                         t = response.body();
+
 
                         showIt(t);
                     }
