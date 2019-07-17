@@ -20,7 +20,8 @@
         android:roundIcon="@drawable/breez_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.RoomActivity"></activity>
+        <activity android:name=".activities.ThingActivity"></activity>
+        <activity android:name=".activities.RoomActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.RoutinesActivity" />
         <activity android:name=".activities.IntroActivity" />

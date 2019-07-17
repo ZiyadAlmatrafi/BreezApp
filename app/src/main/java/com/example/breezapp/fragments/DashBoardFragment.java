@@ -56,5 +56,59 @@ public class DashBoardFragment extends Fragment {
         return v;
 }
 
+    public void response()  {
 
+            try {
+                Call<List<Thing>> call = RestThing.getInstance().getApi().getInbox();
+
+                // Set up progress before call
+                final ProgressDialog progressDoalog;
+                progressDoalog = new ProgressDialog(getContext());
+                progressDoalog.setMax(100);
+                progressDoalog.setMessage("Loading...");
+               // progressDoalog.setTitle("ProgressDialog bar example");
+                progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                // show it
+                progressDoalog.show();
+
+                call.enqueue(new Callback<List<Thing>>() {
+
+
+                    @Override
+                    public void onResponse(Call<List<Thing>> call, Response<List<Thing>> response) {
+                      //  Log.e("Response 1", "Response code: " + response.code());
+
+                        if (response.isSuccessful()) {
+                            progressDoalog.dismiss();
+                            Log.e("Response 2", "Response code: " + response.code());
+
+                            t = response.body();
+
+                            showIt(t);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Thing>> call, Throwable t) {
+                        progressDoalog.dismiss();
+
+                        Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
+                     
+
+                                        response();
+
+                    }
+                });
+
+            }catch (Exception e){
+                Log.e("Error", ""+e);
+                }
+    }
+
+
+    private void showIt(List<Thing> response) {
+
+         mAdapter = new DashBoardAdapter(response,getContext());
+         recyclerView.setAdapter(mAdapter);
+    }
 }
