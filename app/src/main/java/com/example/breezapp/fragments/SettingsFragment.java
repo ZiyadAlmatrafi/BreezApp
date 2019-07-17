@@ -56,10 +56,7 @@ public class SettingsFragment extends Fragment  {
         Setting setting[] = {new Setting(s1.getOption()),
                 new Setting(s2.getOption()),
                 new Setting(s3.getOption()),
-
-               // new Setting(s4.getOption()),
                 new Setting(s5.getOption()),
-               // new Setting(s6.getOption()),
                 new Setting(s7.getOption()),
                 new Setting(s8.getOption())
 
@@ -74,7 +71,5 @@ public class SettingsFragment extends Fragment  {
         return v;
 
     }
-
-
 
 }

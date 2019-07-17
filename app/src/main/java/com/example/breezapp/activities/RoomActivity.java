@@ -65,37 +65,40 @@ public class RoomActivity extends AppCompatActivity {
             case 1:
                 roomType.setImageResource(R.drawable.livingroom);
                 textView.setText("Living Room");
-
+                response();
                 break;
 
             case 2:
                 roomType.setImageResource(R.drawable.bathtub);
                 textView.setText("Bathroom");
+                response();
                 break;
 
             case 3:
                 roomType.setImageResource(R.drawable.kitchen);
                 textView.setText("Kitchen");
+                response();
                 break;
 
             case 4:
                 roomType.setImageResource(R.drawable.studydesk);
                 textView.setText("Study Room");
+                response();
                 break;
 
             case 5:
                 roomType.setImageResource(R.drawable.stock);
                 textView.setText("Store");
+                response();
                 break;
         }
 
     }
 
-
     public void response()  {
 
         try {
-            Call<List<Thing>> call = RestThing.getInstance().getApi().getInbox();
+            Call<List<Thing>> call = RestThing.getInstance().getApi().getThings();
 
             call.enqueue(new Callback<List<Thing>>() {
 
@@ -135,11 +138,5 @@ public class RoomActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
     }
 
-   /* public void setFragment(Fragment f){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.frame,f);
-        ft.commit();
-    }*/
 
 }
