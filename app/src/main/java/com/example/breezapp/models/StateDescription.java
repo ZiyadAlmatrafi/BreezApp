@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class StateDescription {
 
+
    private int minimum ;
    private int maximum ;
    private int step ;

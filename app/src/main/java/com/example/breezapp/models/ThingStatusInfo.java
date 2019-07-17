@@ -5,6 +5,7 @@ public class ThingStatusInfo {
     private String status;
     private String description;
 
+
     public String getStatus() {
         return status;
     }

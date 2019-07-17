@@ -1,6 +1,7 @@
 package com.example.breezapp.models;
 
 public class Channel {
+
     private String uid ;
     private String id ;
     private String channelTypeUID ;

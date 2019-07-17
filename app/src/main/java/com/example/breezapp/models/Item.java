@@ -3,6 +3,7 @@ package com.example.breezapp.models;
 import java.lang.reflect.Array;
 
 public class Item {
+
     private String type;
     private String name;
     private String label;
