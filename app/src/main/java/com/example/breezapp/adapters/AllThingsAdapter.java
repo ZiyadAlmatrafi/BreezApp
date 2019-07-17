@@ -1,6 +1,8 @@
 package com.example.breezapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.breezapp.R;
+import com.example.breezapp.activities.ItemActivity;
 import com.example.breezapp.models.Thing;
 
 import java.util.List;
@@ -35,10 +38,27 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Thing thing = thingList.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+       final Thing thing = thingList.get(position);
 
         holder.textView.setText(thing.getLabel());
+        holder.textView2.setText(thing.getuID());
+                holder.textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, ItemActivity.class);
+                        intent.putExtra("option", thingList.get(position).getuID());
+                        Log.e("Error"," " + thingList.get(position).getuID());
+
+                        context.startActivity(intent);
+                    }
+                });
+                /*for (int i =0 ; i< thingList.size(); i++) {
+                    Log.e("Error",+i+ " " + thingList.get(i).getUID());
+                }*/
+
+
+
     }
 
     @Override
@@ -48,11 +68,15 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+        TextView textView2;
+
         ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.item_dash);
+            textView2 = (TextView) itemView.findViewById(R.id.item_uid);
+
             imageView = (ImageView)itemView.findViewById(R.id.img_dash);
         }
     }

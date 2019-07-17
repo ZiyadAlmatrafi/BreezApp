@@ -48,6 +48,8 @@ public class HubFragment extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), HomeActivity.class);
                 startActivity(i);
+                getActivity().finish();
+
             }
         });
 /*
@@ -72,9 +74,5 @@ public class HubFragment extends Fragment {
 
         return v;
     }
-
-
-
-
 
 }
