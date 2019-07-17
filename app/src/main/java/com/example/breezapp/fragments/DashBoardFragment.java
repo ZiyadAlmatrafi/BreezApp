@@ -99,14 +99,10 @@ public class DashBoardFragment extends Fragment {
                         progressDoalog.dismiss();
 
                         Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
-                       /* AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                        builder.setMessage("Connection lost")
-                                .setPositiveButton("Try again", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {*/
+                     
 
                                         response();
-                                 /*   }
-                                });*/
+
                     }
                 });
 
