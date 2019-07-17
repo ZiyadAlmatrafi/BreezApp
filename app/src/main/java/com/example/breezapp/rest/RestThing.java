@@ -11,7 +11,8 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RestThing {   private static RestThing mInstance;
+public class RestThing {
+    private static RestThing mInstance;
     private static Retrofit retrofit ;
     public static final String BASE_URL = "https://mysmartbreez.mircloud.host";
     private static final String AUTH = "Basic " + Base64.encodeToString(("adsf1234@hotmail.com:asdf1234").getBytes(), Base64.NO_WRAP);
@@ -56,7 +57,7 @@ public class RestThing {   private static RestThing mInstance;
         return mInstance;
     }
 
-    public static LoginAPIService getApi() {
-        return retrofit.create(LoginAPIService.class);
+    public static APIService getApi() {
+        return retrofit.create(APIService.class);
     }
 }
