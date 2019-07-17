@@ -24,11 +24,6 @@ public interface APIService {
     );
 
 
-/*
-    @GET("/rest/things")  //End Url
-    Call<ThingsResponse> getThings();
-
-*/
     @GET("/rest/things")
     Call<List<Thing>> getThings();
 
