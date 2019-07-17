@@ -34,19 +34,14 @@ public class DashBoardFragment extends Fragment {
     private List<Thing> t;
     private RecyclerView recyclerView;
     private DashBoardAdapter mAdapter;
-/*
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-*/
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_dash_board, container, false);
 
          recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_dash);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         /*
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_dash);
@@ -55,9 +50,7 @@ public class DashBoardFragment extends Fragment {
         recyclerView.setAdapter(mAdapter);
 */
 
-
         response();
-
 
         return v;
 }
@@ -114,9 +107,7 @@ public class DashBoardFragment extends Fragment {
 
     private void showIt(List<Thing> response) {
 
-
          mAdapter = new DashBoardAdapter(response,getContext());
          recyclerView.setAdapter(mAdapter);
     }
-
 }
