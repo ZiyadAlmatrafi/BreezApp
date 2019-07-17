@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.NightDeviceFragment">
+    tools:context=".fragments.RoutineDevicesFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
         android:layout_marginLeft="88dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="30dp"
         android:text="sengled E11-G13"
         android:textColor="#0A0707"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +129,7 @@
         android:layout_height="51dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:src="@drawable/idea"
@@ -185,39 +185,39 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
 
-<TextView
-    android:id="@+id/routineName"
-    android:layout_width="174dp"
-    android:layout_height="54dp"
-    android:foregroundGravity="center_horizontal"
-    android:gravity="center"
-    android:text="TextView"
-    android:textColor="#050505"
-    android:textSize="24dp"
-    android:textStyle="bold"
-    android:typeface="serif"
-    android:visibility="invisible"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.497"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/routineType" />
+    <TextView
+        android:id="@+id/routineName"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#050505"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/routineType" />
 
-<ImageView
-    android:id="@+id/routineType"
-    android:layout_width="84dp"
-    android:layout_height="76dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginTop="28dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginRight="8dp"
-    android:foregroundGravity="center_horizontal"
-    android:visibility="invisible"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.498"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/thenight" />
+    <ImageView
+        android:id="@+id/routineType"
+        android:layout_width="84dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:foregroundGravity="center_horizontal"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/thenight" />
 
 
     <Button
@@ -239,33 +239,33 @@
         app:layout_constraintStart_toEndOf="@+id/btn_event"
         app:layout_constraintTop_toBottomOf="@+id/routineName" />
 
-<Button
-    android:id="@+id/btn_event"
-    style="@android:style/Widget.Holo.Button.Toggle"
-    android:layout_width="158dp"
-    android:layout_height="53dp"
-    android:layout_marginStart="28dp"
-    android:layout_marginLeft="28dp"
-    android:layout_marginTop="44dp"
-    android:background="@drawable/btn2_rounded"
-    android:text="Event"
-    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-    android:textColor="#686262"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/routineName" />
+    <Button
+        android:id="@+id/btn_event"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="158dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/btn2_rounded"
+        android:text="Event"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#686262"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/routineName" />
 
-<TextView
-    android:id="@+id/textView30"
-    android:layout_width="48dp"
-    android:layout_height="37dp"
-    android:layout_marginTop="72dp"
-    android:layout_marginEnd="40dp"
-    android:layout_marginRight="40dp"
-    android:text="Save"
-    android:textColor="#12A69B"
-    android:textSize="20sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="48dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="Save"
+        android:textColor="#12A69B"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
