@@ -56,7 +56,7 @@ public class RestThing {   private static RestThing mInstance;
         return mInstance;
     }
 
-    public static LoginAPIService getApi() {
-        return retrofit.create(LoginAPIService.class);
+    public static APIService getApi() {
+        return retrofit.create(APIService.class);
     }
 }

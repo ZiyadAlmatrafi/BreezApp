@@ -17,7 +17,6 @@ import java.util.List;
 
 public class RoomDevicesAdapter extends RecyclerView.Adapter<RoomDevicesAdapter.ViewHolder> {
 
-    // private ArrayList<Thing> devicesList;
     private List<Thing> devicesList;
     Context context;
 

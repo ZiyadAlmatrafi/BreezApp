@@ -10,11 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.breezapp.models.Device;
 import com.example.breezapp.R;
 import com.example.breezapp.models.Thing;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.ViewHolder> {

@@ -14,7 +14,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 
-public interface LoginAPIService {
+public interface APIService {
 
     @FormUrlEncoded
     @POST("/login")  //End Url

@@ -21,7 +21,6 @@ import com.example.breezapp.R;
 import com.example.breezapp.activities.HomeActivity;
 import com.example.breezapp.models.LoginResponse;
 import com.example.breezapp.models.User;
-import com.example.breezapp.rest.LoginAPIService;
 import com.example.breezapp.rest.RestClient;
 import com.example.breezapp.storage.SharedPrefManager;
 
@@ -40,7 +39,7 @@ public class SignInFragment extends Fragment {
     private EditText editTextEmail;
     private EditText editTextPassword;
 
-   // LoginAPIService apiService;
+   // APIService apiService;
     private static final String TAG = SignInFragment.class.getSimpleName();
 
     public SignInFragment() {
