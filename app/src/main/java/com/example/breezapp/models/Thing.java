@@ -19,7 +19,6 @@ public class Thing {
     @SerializedName("bridgeUID")
     @Expose
     private String bridgeUID;
-
     @SerializedName("UID")
     @Expose
     private String uID;
@@ -28,7 +27,7 @@ public class Thing {
     private String thingTypeUID;
     @SerializedName("channels")
     @Expose
-    private List<Channel> channels = null;
+    private List<Channel> channels ;
     @SerializedName("location")
     @Expose
     private String location;

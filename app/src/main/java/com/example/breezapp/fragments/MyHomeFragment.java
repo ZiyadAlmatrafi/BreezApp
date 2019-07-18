@@ -44,7 +44,7 @@ public class MyHomeFragment extends Fragment {
     {
         View view = inflater.inflate(R.layout.fragment_my_home, container, false);
 
-        all_things_total = (TextView)view.findViewById(R.id.all_things);
+        all_things_total = (TextView)view.findViewById(R.id.all_things_total);
         fetchAllThings();
 
         layoutManager = (new GridLayoutManager(getContext(),2));
@@ -80,7 +80,7 @@ public class MyHomeFragment extends Fragment {
         });
         return view;
 
-    }
+}
 
 
     private void fetchAllThings() {try {

@@ -42,13 +42,13 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
        final Thing thing = thingList.get(position);
 
         holder.textView.setText(thing.getLabel());
-        holder.textView2.setText(thing.getuID());
                 holder.textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(context, ItemActivity.class);
-                        intent.putExtra("option", thingList.get(position).getuID());
-                        Log.e("Error"," " + thingList.get(position).getuID());
+                        intent.putExtra("option", thingList.get(position).getChannels().get(0).getLinkedItems().get(0));
+
+                        Log.e("All things adapter", "Response: " + thingList.get(position).getChannels().get(0).getLinkedItems().get(0));
 
                         context.startActivity(intent);
                     }
@@ -66,13 +66,11 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-        TextView textView2;
         ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.item_dash);
-            textView2 = (TextView) itemView.findViewById(R.id.item_uid);
+            textView = (TextView) itemView.findViewById(R.id.item_dash);git
             imageView = (ImageView)itemView.findViewById(R.id.img_dash);
         }
     }

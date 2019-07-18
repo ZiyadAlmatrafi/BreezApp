@@ -42,6 +42,9 @@ tools:context="com.example.breezapp.fragments.SignInFragment">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
+
+
+
     <EditText
         android:id="@+id/inputPassword"
         android:layout_width="343dp"
@@ -50,11 +53,14 @@ tools:context="com.example.breezapp.fragments.SignInFragment">
         android:gravity="center|left"
         android:singleLine="true"
         android:hint="Password"
+        android:inputType="textPassword"
         android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailId" />
+
+
 
     <TextView
         android:id="@+id/textView2"
