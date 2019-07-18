@@ -15,15 +15,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="378dp"
-            android:layout_height="100dp"
+            android:layout_width="352dp"
+            android:layout_height="106dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="375dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView

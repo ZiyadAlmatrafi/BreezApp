@@ -24,8 +24,6 @@ public class HomeActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_home);
 
 
-
-
         setFragment(new MyHomeFragment());
       BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 

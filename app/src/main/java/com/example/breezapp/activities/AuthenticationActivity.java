@@ -1,5 +1,6 @@
 package com.example.breezapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -32,6 +33,7 @@ public class AuthenticationActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -40,5 +42,4 @@ public class AuthenticationActivity extends AppCompatActivity {
         adapter.addFragment(new SignUpFragment(), "SIGNUP");
         viewPager.setAdapter(adapter);
     }
-
 }
