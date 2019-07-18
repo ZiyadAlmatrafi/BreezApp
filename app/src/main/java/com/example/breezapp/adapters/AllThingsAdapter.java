@@ -70,7 +70,7 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.item_dash);git
+            textView = (TextView) itemView.findViewById(R.id.item_dash);
             imageView = (ImageView)itemView.findViewById(R.id.img_dash);
         }
     }
