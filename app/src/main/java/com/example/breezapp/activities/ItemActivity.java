@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class ItemActivity extends AppCompatActivity {
     TextView textView;
-    Item item;
+    List<Item> item;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +32,12 @@ public class ItemActivity extends AppCompatActivity {
         Bundle bundle;
         bundle =  getIntent().getExtras();
         String option = bundle.getString("option");
-        textView.setText(option);
 
         response(option);
     }
 
 
-    public void response(String name) {
+    public void response(final String name) {
 
 
         Call<List<Item>> call = RestThing.getInstance().getApi().getItems();
@@ -62,12 +61,30 @@ public class ItemActivity extends AppCompatActivity {
 
                 if (response.isSuccessful()) {
                    // progressDoalog.dismiss();
-                    Log.e("Response 2", "Response code: " + response.body().size());
+                   // Log.e("Response 2", "Response code: " + response.body().size());
+                    Item ite;
+                    item = response.body();
+                        for(int i = 0 ; i <item.size();i++){
+                           // Log.e("Response 2555", "Response code: " +item.get(i).getName() );
+                            if(name.equalsIgnoreCase(item.get(i).getName() )){
+                                Log.e("Item Activity", "Response: " +item.get(i).getLink() );
+                                ite = new Item();
+                                ite.setName(item.get(i).getName());
+                                ite.setLink(item.get(i).getLink());
+                                ite.setState(item.get(i).getState());
+                                ite.setType(item.get(i).getType());
+                                ite.setCategory(item.get(i).getCategory());
+                                ite.setLabel(item.get(i).getLabel());
 
-                    //  t = response.body();
+                                textView.setText(item.get(i).getLabel());
 
 
-                    // showIt(t);
+
+                            }
+
+                        }
+
+                    //showIt(t);
                 }
             }
 

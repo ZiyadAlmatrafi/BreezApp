@@ -48,7 +48,7 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
                         Intent intent = new Intent(context, ItemActivity.class);
                         intent.putExtra("option", thingList.get(position).getChannels().get(0).getLinkedItems().get(0));
 
-                        Log.e("Response 2555", "Response code: " + thingList.get(position).getChannels().get(0).getLinkedItems().get(0));
+                        Log.e("All things adapter", "Response: " + thingList.get(position).getChannels().get(0).getLinkedItems().get(0));
 
                         context.startActivity(intent);
                     }

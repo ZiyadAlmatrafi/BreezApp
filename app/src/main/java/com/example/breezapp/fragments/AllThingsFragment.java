@@ -85,7 +85,7 @@ public class AllThingsFragment extends Fragment {
                         progressDoalog.dismiss();
                         Log.e("Response 2", "Response code: " + response.code());
                        t = response.body();
-                        Log.e("Response 2555", "Response code: " + t.get(1).getChannels().get(0).getLinkedItems().get(0));
+                        Log.e("All things fragment", "Response: " + t.get(1).getChannels().get(0).getLinkedItems().get(0));
 
                        /* //
                         try {
