@@ -1,5 +1,6 @@
 package com.example.breezapp.rest;
 
+import com.example.breezapp.models.Item;
 import com.example.breezapp.models.LoginResponse;
 
 import com.example.breezapp.models.Thing;
@@ -14,7 +15,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 
-public interface LoginAPIService {
+public interface APIService {
 
     @FormUrlEncoded
     @POST("/login")  //End Url
@@ -24,16 +25,16 @@ public interface LoginAPIService {
     );
 
 
-/*
-    @GET("/rest/things")  //End Url
-    Call<ThingsResponse> getThings();
 
-*/
     @GET("/rest/things")
     Call<List<Thing>> getThings();
 
     @GET("/rest/inbox")
     Call<List<Thing>> getInbox();
 
-   // Call<LoginResponse> userLogin(@Query("tagged") String tags);
+    @GET("/rest/items")
+    Call<List<Item>> getItems();
+
+
+
 }

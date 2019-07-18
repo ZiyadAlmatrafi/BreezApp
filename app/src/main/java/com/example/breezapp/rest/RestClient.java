@@ -2,8 +2,6 @@ package com.example.breezapp.rest;
 
 import android.util.Base64;
 
-import com.google.android.gms.common.api.Api;
-
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -58,8 +56,8 @@ public class RestClient {
         return mInstance;
     }
 
-    public static LoginAPIService getApi() {
-        return retrofit.create(LoginAPIService.class);
+    public static APIService getApi() {
+        return retrofit.create(APIService.class);
     }
 
 
