@@ -38,8 +38,8 @@ public interface APIService {
     @GET("/rest/items")
     Call<List<Item>> getItems();
 
-    @POST("rest/items/")
-    void postItem(@Path ("{itemname}")@Body String state);
+    @POST("rest/items/{itemname}")
+    Call<Void> postItem(@Path ("itemname")String itemname, @Body String state);
 
 
 

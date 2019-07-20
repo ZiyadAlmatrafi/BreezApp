@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +26,15 @@ public class ItemActivity extends AppCompatActivity {
     TextView textView;
     List<Item> item;
     ArrayList<Item> itemList;
+    Switch aSwitch;
+    String value;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
         textView = (TextView)findViewById(R.id.item_id);
+        aSwitch = (Switch) findViewById(R.id.switch_item);
 
         Intent intent = getIntent();
         Bundle bundle;
@@ -76,12 +81,18 @@ public class ItemActivity extends AppCompatActivity {
                                // itemList.add(ite);
 
                             }
-                         // RestThing.getInstance().getApi().postItem("");
+                            if (aSwitch.isChecked()){
+                                value = "ON";
+                            }else {
+                                value = "OFF";
+                            }
+                            post(item.get(i).getName(),value);
 
                         }
 
 
-                    //showIt(t);
+
+
                 }
             }
 
@@ -97,4 +108,25 @@ public class ItemActivity extends AppCompatActivity {
             }
         });
     }
+    public void post(String itemname, String state){
+        Call<Void> voidCall = RestThing.getApi().postItem(itemname,state);
+
+        voidCall.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+
+                 Log.e("Response POST", "Response code: " + response.code());
+
+
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.e("Response POST", "Error");
+
+            }
+        });
+
+    }
+
 }
