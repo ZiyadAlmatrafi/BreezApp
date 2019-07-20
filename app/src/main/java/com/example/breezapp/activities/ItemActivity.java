@@ -13,15 +13,18 @@ import com.example.breezapp.R;
 import com.example.breezapp.models.Item;
 import com.example.breezapp.rest.RestThing;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Path;
 
 public class ItemActivity extends AppCompatActivity {
     TextView textView;
     List<Item> item;
+    ArrayList<Item> itemList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,15 +45,7 @@ public class ItemActivity extends AppCompatActivity {
 
         Call<List<Item>> call = RestThing.getInstance().getApi().getItems();
 
-        // Set up progress before call
-        /*final ProgressDialog progressDoalog;
-        progressDoalog = new ProgressDialog(getApplicationContext());
-        progressDoalog.setMax(100);
-        progressDoalog.setMessage("Loading...");
-        // progressDoalog.setTitle("ProgressDialog bar example");
-        progressDoalog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        // show it
-        progressDoalog.show();*/
+
 
         call.enqueue(new Callback<List<Item>>() {
 
@@ -67,7 +62,9 @@ public class ItemActivity extends AppCompatActivity {
                         for(int i = 0 ; i <item.size();i++){
                            // Log.e("Response 2555", "Response code: " +item.get(i).getName() );
                             if(name.equalsIgnoreCase(item.get(i).getName() )){
-                                Log.e("Item Activity", "Response: " +item.get(i).getLink() );
+                              //  Log.e("Item Activity", "Response: " +item.get(i).getLink() );
+                                textView.setText(item.get(i).getLabel());
+
                                 ite = new Item();
                                 ite.setName(item.get(i).getName());
                                 ite.setLink(item.get(i).getLink());
@@ -76,13 +73,13 @@ public class ItemActivity extends AppCompatActivity {
                                 ite.setCategory(item.get(i).getCategory());
                                 ite.setLabel(item.get(i).getLabel());
 
-                                textView.setText(item.get(i).getLabel());
-
-
+                               // itemList.add(ite);
 
                             }
+                         // RestThing.getInstance().getApi().postItem("");
 
                         }
+
 
                     //showIt(t);
                 }
@@ -90,7 +87,7 @@ public class ItemActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Item>> call, Throwable t) {
-               // progressDoalog.dismiss();
+             //   progressDoalog.dismiss();
 
                 Toast.makeText(getApplicationContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
 
