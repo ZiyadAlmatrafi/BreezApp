@@ -35,9 +35,13 @@ public class HubFoundFragment extends Fragment {
         enterCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), AuthenticationActivity.class);
-                startActivity(i);
-                getActivity().finish();
+
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+
+                ft.replace(R.id.frame,new HubFragment() );
+                ft.addToBackStack(null);
+                ft.commit();
+
 
             }
         });

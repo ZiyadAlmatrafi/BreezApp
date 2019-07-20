@@ -57,8 +57,6 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
                     Log.e("Error",+i+ " " + thingList.get(i).getUID());
                 }*/
 
-
-
     }
 
     @Override
@@ -68,13 +66,11 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-
         ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.item_dash);
-
             imageView = (ImageView)itemView.findViewById(R.id.img_dash);
         }
     }

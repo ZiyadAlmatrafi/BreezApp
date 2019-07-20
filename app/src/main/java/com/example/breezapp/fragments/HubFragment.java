@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.example.breezapp.activities.AuthenticationActivity;
 import com.example.breezapp.activities.HomeActivity;
 import com.example.breezapp.activities.MapsActivity;
 import com.example.breezapp.R;
@@ -24,7 +26,7 @@ public class HubFragment extends Fragment {
 
 
     Button hub_button;
-    Button map_button;
+    TextView use_maps;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,30 +42,21 @@ public class HubFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_hub, container, false);
 
         hub_button = (Button) v.findViewById(R.id.hub_button);
-        map_button = (Button) v.findViewById(R.id.map_button);
+        use_maps = (TextView) v.findViewById(R.id.use_maps);
 
 
         hub_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), HomeActivity.class);
+
+                Intent i = new Intent(getContext(), AuthenticationActivity.class);
                 startActivity(i);
                 getActivity().finish();
 
             }
         });
-/*
-        hub_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
 
-                ft.replace(R.id.frame,new MyHomeFragment());
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });*/
-        map_button.setOnClickListener(new View.OnClickListener() {
+        use_maps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), MapsActivity.class);

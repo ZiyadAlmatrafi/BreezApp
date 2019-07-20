@@ -51,9 +51,9 @@ public class RoomActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle;
         bundle =  getIntent().getExtras();
+
+
         int option = bundle.getInt("position");
-
-
         switch (option){
 
             case 0:
