@@ -21,7 +21,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        map:layout_constraintBottom_toTopOf="@+id/the_address"
+        map:layout_constraintBottom_toTopOf="@+id/my_address"
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toBottomOf="@+id/map_bar"
@@ -51,7 +51,7 @@
 
 
     <TextView
-        android:id="@+id/the_address"
+        android:id="@+id/my_address"
         android:layout_width="384dp"
         android:layout_height="166dp"
         android:layout_marginTop="8dp"

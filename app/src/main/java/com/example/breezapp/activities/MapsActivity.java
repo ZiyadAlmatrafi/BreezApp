@@ -7,7 +7,6 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,7 +16,6 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -119,7 +117,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     else {
                         if (addresses.size() > 0) {
 
-                            the_address = (TextView) findViewById(R.id.the_address);
+                            the_address = (TextView) findViewById(R.id.my_address);
 
                             String address = addresses.get(0).getAddressLine(0);
                             String city = addresses.get(0).getLocality();

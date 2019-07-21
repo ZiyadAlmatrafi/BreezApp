@@ -8,22 +8,25 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textView39"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:id="@+id/textView8"
+        android:layout_width="386dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="52dp"
+        android:background="#0AA092"
+        android:gravity="center"
         android:text="Address"
-        android:textColor="#000000"
-        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+
+
+
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -102,22 +105,23 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/my_address"
+        android:layout_width="320dp"
+        android:layout_height="117dp"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:text="Connected hubs"
+        android:background="#EFF9F8"
         android:textColor="#000000"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
