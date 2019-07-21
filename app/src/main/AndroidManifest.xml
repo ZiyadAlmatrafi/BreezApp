@@ -20,12 +20,19 @@
         android:roundIcon="@drawable/breez_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ThingActivity"></activity>
-        <activity android:name=".activities.RoomActivity" />
-        <activity android:name=".activities.ItemActivity" />
-        <activity android:name=".activities.SettingsActivity" />
-        <activity android:name=".activities.RoutinesActivity" />
-        <activity android:name=".activities.IntroActivity" />
+
+        <activity android:name=".activities.ThingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.RoomActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ItemActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.SettingsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.RoutinesActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.IntroActivity"
+            android:screenOrientation="portrait"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -40,13 +47,18 @@
 
         <activity
             android:name=".activities.MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity android:name=".activities.HomeActivity" />
-        <activity android:name=".activities.OnBoardingActivity" />
-        <activity android:name=".activities.AuthenticationActivity" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.OnBoardingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.AuthenticationActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.SplashActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

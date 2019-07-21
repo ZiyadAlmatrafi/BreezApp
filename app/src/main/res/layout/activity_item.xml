@@ -6,12 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".activities.ItemActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="411dp"
-        android:layout_height="110dp"
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="386dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#0AA092"
+        android:gravity="center"
+        android:text="Items"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="386dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -21,17 +47,13 @@
                 android:id="@+id/item_id"
                 android:layout_width="198dp"
                 android:layout_height="75dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="25dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="96dp"
-                android:layout_marginRight="96dp"
+                android:gravity="center"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:typeface="serif"
-                android:gravity="center"
-                app:layout_constraintEnd_toStartOf="@+id/switch_item"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,11 +61,14 @@
                 android:id="@+id/switch_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="52dp"
-                android:layout_marginRight="52dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:text="OFF/ON"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:checked="true" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

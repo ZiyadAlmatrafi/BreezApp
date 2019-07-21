@@ -16,6 +16,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 public interface APIService {
 
@@ -38,7 +39,7 @@ public interface APIService {
     Call<List<Item>> getItems();
 
     @POST("rest/items/{itemname}")
-    Call<Item> postItem();
+    Call<Void> postItem(@Path ("itemname")String itemname, @Body String state);
 
 
 
