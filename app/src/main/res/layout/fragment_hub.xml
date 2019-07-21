@@ -15,6 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="Name your hub"
+        android:textColor="#050303"
+        android:typeface="serif"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.174"
@@ -40,6 +42,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Name your house"
+        android:textColor="#050303"
+        android:typeface="serif"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.183"
@@ -68,6 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Enter house address"
+        android:textColor="#050303"
+        android:typeface="serif"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.192"
@@ -75,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/street"
         android:layout_width="303dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -88,20 +94,22 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/locality"
         android:layout_width="303dp"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Locality"
+        android:textColor="#050303"
+        android:typeface="serif"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/street" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/city_state"
         android:layout_width="303dp"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
@@ -112,37 +120,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/locality" />
 
     <Button
         android:id="@+id/hub_button"
         android:layout_width="141dp"
         android:layout_height="57dp"
         android:layout_marginTop="52dp"
-        android:background="#0AA092"
+        android:background="@drawable/btn3_rounded"
         android:text="Continue"
         android:textColor="#FAFFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/city_state" />
 
     <TextView
         android:id="@+id/use_maps"
         style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-        android:layout_width="76dp"
-        android:layout_height="44dp"
+        android:layout_width="127dp"
+        android:layout_height="61dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="#F9F9F9"
         android:shadowColor="#F9F9F9"
         android:text="Use maps"
         android:textColor="#008477"
-        android:textSize="12sp"
+        android:textSize="14sp"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintHorizontal_bias="0.597"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 

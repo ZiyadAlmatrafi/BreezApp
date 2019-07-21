@@ -23,7 +23,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_event" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/street"
         android:layout_width="289dp"
         android:layout_height="44dp"
         android:layout_marginStart="88dp"
@@ -49,10 +49,10 @@
         android:text="orvibo steel"
         android:textColor="#0A0707"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/street" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/locality"
         android:layout_width="289dp"
         android:layout_height="44dp"
         android:layout_marginStart="88dp"
@@ -75,10 +75,10 @@
         android:text="Orvibo Dimmer"
         android:textColor="#0A0707"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/locality" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/city_state"
         android:layout_width="289dp"
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
@@ -104,7 +104,7 @@
         android:text="Breez Office"
         android:textColor="#0A0707"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/city_state" />
 
     <EditText
         android:id="@+id/editText6"
@@ -133,7 +133,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:src="@drawable/idea"
-        app:layout_constraintEnd_toStartOf="@+id/editText3"
+        app:layout_constraintEnd_toStartOf="@+id/street"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_event" />
@@ -149,7 +149,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:src="@drawable/dimmer"
-        app:layout_constraintEnd_toStartOf="@+id/editText5"
+        app:layout_constraintEnd_toStartOf="@+id/city_state"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
@@ -164,7 +164,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:src="@drawable/lamp"
-        app:layout_constraintEnd_toStartOf="@+id/editText4"
+        app:layout_constraintEnd_toStartOf="@+id/locality"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
