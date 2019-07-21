@@ -27,7 +27,8 @@ public class ItemActivity extends AppCompatActivity {
     List<Item> item;
     ArrayList<Item> itemList;
     Switch aSwitch;
-    String value;
+    public String value;
+    public String itemName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,16 +80,19 @@ public class ItemActivity extends AppCompatActivity {
                                 ite.setLabel(item.get(i).getLabel());
 
                                // itemList.add(ite);
+                                itemName =item.get(i).getName();
+
+                                if (aSwitch.isChecked()){
+                                    value = "ON";
+                                }else {
+                                    value = "OFF";
+                                }
+                                post(itemName,value);
 
                             }
-                            if (aSwitch.isChecked()){
-                                value = "ON";
-                            }else {
-                                value = "OFF";
-                            }
-                            post(item.get(i).getName(),value);
 
-                        }
+                            }
+
 
 
 
@@ -100,7 +104,7 @@ public class ItemActivity extends AppCompatActivity {
             public void onFailure(Call<List<Item>> call, Throwable t) {
              //   progressDoalog.dismiss();
 
-                Toast.makeText(getApplicationContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), " Error connecting to the server.. Try Again later", Toast.LENGTH_SHORT).show();
 
 
                // response();

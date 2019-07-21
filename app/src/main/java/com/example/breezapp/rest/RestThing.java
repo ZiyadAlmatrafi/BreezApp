@@ -16,7 +16,7 @@ public class RestThing {
     private static Retrofit retrofit ;
     public static final String BASE_URL = "https://mysmartbreez.mircloud.host";
     private static final String AUTH = "Basic " + Base64.encodeToString(("adsf1234@hotmail.com:asdf1234").getBytes(), Base64.NO_WRAP);
-    private static final String AUT = "application/json";
+    private static final String AUT = "text/plain";
 
 
     private  RestThing() {
@@ -28,7 +28,7 @@ public class RestThing {
                                 Request original = chain.request();
 
                                 Request.Builder requestBuilder = original.newBuilder()
-                                        // .addHeader("Content-Type", AUT)
+                                         .addHeader("Content-Type", AUT)
 
                                         .addHeader("Authorization", AUTH)
                                         //.addHeader("Accept", AUT)

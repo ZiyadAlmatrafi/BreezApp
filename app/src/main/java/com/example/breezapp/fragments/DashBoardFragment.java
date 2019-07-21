@@ -93,8 +93,7 @@ public class DashBoardFragment extends Fragment {
 
                         Toast.makeText(getContext(), " Error connecting to the server.. Trying Again...", Toast.LENGTH_SHORT).show();
                      
-
-                                        response();
+                        response();
 
                     }
                 });
