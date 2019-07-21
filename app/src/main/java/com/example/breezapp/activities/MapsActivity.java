@@ -7,12 +7,18 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.breezapp.R;
@@ -26,6 +32,9 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
+import java.util.Locale;
+
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
@@ -33,6 +42,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private GoogleApiClient googleApiClient;
+    TextView the_address;
+
+    //public static final String MY_PREFS="com.example.breezapp.activities.Address";
 
 
 
@@ -97,6 +109,44 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 currentUserLocation.position(currentUserLatLang);
                 mMap.addMarker(currentUserLocation);
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentUserLatLang, 16));
+
+                try {
+                    Geocoder geo = new Geocoder(this, Locale.getDefault());
+                    List<Address> addresses = geo.getFromLocation(userCurrentLocation.getLatitude(), userCurrentLocation.getLongitude(), 1);
+                    if (addresses.isEmpty()) {
+                        the_address.setText("Waiting for Location");
+                    }
+                    else {
+                        if (addresses.size() > 0) {
+
+                            the_address = (TextView) findViewById(R.id.the_address);
+
+                            String address = addresses.get(0).getAddressLine(0);
+                            String city = addresses.get(0).getLocality();
+                            String state = addresses.get(0).getAdminArea();
+                            String country = addresses.get(0).getCountryName();
+                            String postalCode = addresses.get(0).getPostalCode();
+                            String knownName = addresses.get(0).getFeatureName();
+                            the_address.setText(address + ", " + city +", " + state + ", " + country + ", " + postalCode + ", " + knownName);
+
+
+
+                            SharedPreferences preferences = getSharedPreferences("MY_SHARED_PREF", MODE_PRIVATE);
+                            SharedPreferences.Editor editor= preferences.edit();
+                            editor.putString("the_address", address);
+                            editor.putString("the_city", city);
+                            editor.putString("the_state", state);
+                            editor.putString("the_country", country);
+                            editor.putString("the_postalCode", postalCode);
+                            editor.putString("the_knownName", knownName);
+                            editor.commit();
+
+                        }
+                    }
+                }
+                catch (Exception e) {
+                    e.printStackTrace(); // getFromLocation() may sometimes fail
+                }
 
             }
         }

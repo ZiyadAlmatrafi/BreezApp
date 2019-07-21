@@ -111,7 +111,7 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="162dp"
             android:layout_marginRight="162dp"
-            android:background="#12A79C"
+            android:background="@drawable/btn3_rounded"
             android:text="Send"
             android:textColor="#FFFFFF"
             android:typeface="serif"
