@@ -9,17 +9,17 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="386dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="52dp"
-        android:background="#0AA092"
+        android:layout_width="148dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="Address"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:text="Address:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
         android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
@@ -106,20 +106,19 @@
 
     <TextView
         android:id="@+id/my_address"
-        android:layout_width="320dp"
-        android:layout_height="117dp"
+        android:layout_width="279dp"
+        android:layout_height="204dp"
         android:layout_marginStart="31dp"
         android:layout_marginLeft="31dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="#EFF9F8"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:textStyle="bold"
         android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 

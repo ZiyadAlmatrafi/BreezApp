@@ -113,7 +113,7 @@ public class ItemActivity extends AppCompatActivity {
         });
     }
     public void post(String itemname, String state){
-        Call<Void> voidCall = RestThing.getApi().postItem(itemname,state);
+        Call<Void> voidCall = RestThing.getInstance().getApi().postItem(itemname,state);
 
         voidCall.enqueue(new Callback<Void>() {
             @Override
