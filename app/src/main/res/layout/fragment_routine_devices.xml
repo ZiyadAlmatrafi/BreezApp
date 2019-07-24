@@ -163,7 +163,7 @@
         android:layout_marginTop="52dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:src="@drawable/lamp"
+        android:src="@drawable/switch_on"
         app:layout_constraintEnd_toStartOf="@+id/locality"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

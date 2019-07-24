@@ -42,7 +42,7 @@ public class RoutineDevicesFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Log.e("RoutineDevicesFragment","Switch to Routine Event Fragment"+"");
+                Log.e("RoutineDevicesFragment","switch to Routine Event Fragment"+"");
 
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();

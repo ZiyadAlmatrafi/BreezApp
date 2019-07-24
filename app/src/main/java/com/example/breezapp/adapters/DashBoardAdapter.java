@@ -15,7 +15,7 @@ import com.example.breezapp.models.Thing;
 
 import java.util.List;
 
-public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.ViewHolder> {
+public class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.ViewHolder> {
    // private ArrayList<Thing> thingList;
 
     private List<Thing> thingList;
@@ -39,6 +39,7 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Thing thing = thingList.get(position);
+
 
         holder.textView.setText(thing.getLabel());
         //holder.imageView.setImageResource(mDevice[position].getImg());

@@ -41,6 +41,10 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
        final Thing thing = thingList.get(position);
 
+
+
+
+
         holder.textView.setText(thing.getLabel());
                 holder.textView.setOnClickListener(new View.OnClickListener() {
                     @Override
