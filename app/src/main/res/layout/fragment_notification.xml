@@ -51,11 +51,11 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="419dp"
-        android:layout_height="20dp"
+        android:layout_width="415dp"
+        android:layout_height="23dp"
         android:text="      Just now"
-        android:typeface="serif"
         android:textSize="18sp"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
