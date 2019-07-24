@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.breezapp.R;
 import com.example.breezapp.models.Item;
+import com.example.breezapp.rest.RestItem;
 import com.example.breezapp.rest.RestThing;
 
 import java.util.ArrayList;
@@ -87,6 +88,7 @@ public class ItemActivity extends AppCompatActivity {
                                 }else {
                                     value = "OFF";
                                 }
+
                                 post(itemName,value);
 
                             }
@@ -112,14 +114,21 @@ public class ItemActivity extends AppCompatActivity {
             }
         });
     }
-    public void post(String itemname, String state){
-        Call<Void> voidCall = RestThing.getInstance().getApi().postItem(itemname,state);
+    public void post(String itemName,String state){
 
+      //  Log.e("Response POST", "Response item: " + itemname);
+       // Log.e("Response POST", "Response state: " + state);
+       // Log.e("Response POST", "Response state: " + RestThing.getInstance().getApi().postItem(itemname,state));
+
+        Call<Void> voidCall = RestItem.getInstance().getApi().postItem(itemName,"ON");
+        Log.e("Response POST", "Response item: " + itemName);
+        Log.e("Response POST", "Response state: " + state);
         voidCall.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
 
-                 Log.e("Response POST", "Response code: " + response.code());
+                Log.e("Response POST", "Response code: " + response.code());
+                Log.e("Response POST", "Response mess: " + response.headers());
 
 
             }
