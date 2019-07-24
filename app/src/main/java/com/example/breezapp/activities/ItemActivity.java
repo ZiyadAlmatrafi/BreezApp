@@ -36,7 +36,7 @@ public class ItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item);
         textView = (TextView)findViewById(R.id.item_id);
         aSwitch = (Switch) findViewById(R.id.switch_item);
-
+        textView.setText("Switch");
         Intent intent = getIntent();
         Bundle bundle;
         bundle =  getIntent().getExtras();
@@ -69,15 +69,15 @@ public class ItemActivity extends AppCompatActivity {
                            // Log.e("Response 2555", "Response code: " +item.get(i).getName() );
                             if(name.equalsIgnoreCase(item.get(i).getName() )){
                               //  Log.e("Item Activity", "Response: " +item.get(i).getLink() );
-                                textView.setText(item.get(i).getLabel());
+                              //  textView.setText(item.get(i).getLabel());
 
-                                ite = new Item();
+                                /*ite = new Item();
                                 ite.setName(item.get(i).getName());
                                 ite.setLink(item.get(i).getLink());
                                 ite.setState(item.get(i).getState());
                                 ite.setType(item.get(i).getType());
                                 ite.setCategory(item.get(i).getCategory());
-                                ite.setLabel(item.get(i).getLabel());
+                                ite.setLabel(item.get(i).getLabel());*/
 
                                // itemList.add(ite);
                                 itemName =item.get(i).getName();
@@ -113,11 +113,14 @@ public class ItemActivity extends AppCompatActivity {
         });
     }
     public void post(String itemname, String state){
-        Call<Void> voidCall = RestThing.getInstance().getApi().postItem(itemname,state);
+        Log.e("POST ", "item name: " + itemname);
+        Log.e("POST", "state: " + state);
 
-        voidCall.enqueue(new Callback<Void>() {
+        Call<String> voidCall = RestThing.getInstance().getApi().postItem(itemname,"ON");
+
+        voidCall.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(Call<String> call, Response<String> response) {
 
                  Log.e("Response POST", "Response code: " + response.code());
 
@@ -125,7 +128,7 @@ public class ItemActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
                 Log.e("Response POST", "Error");
 
             }
