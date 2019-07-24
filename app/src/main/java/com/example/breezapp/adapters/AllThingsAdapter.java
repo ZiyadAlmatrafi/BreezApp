@@ -54,12 +54,14 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
 
         else if (thingList.get(position).getLabel().equals("Breez Office")){
 
-            holder.imageView.setImageResource(R.drawable.thewalllamp);
+            holder.imageView.setImageResource(R.drawable.desk);
         }
 
-        else {
+        else if((thingList.get(position).getLabel().equals("Z-Wave Serial Controller"))) {
 
-            holder.imageView.setImageResource(R.drawable.lamp);
+            holder.imageView.setImageResource(R.drawable.controls);
+        }else{
+
         }
 
 
