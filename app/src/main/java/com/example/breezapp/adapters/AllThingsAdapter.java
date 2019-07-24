@@ -41,6 +41,28 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
        final Thing thing = thingList.get(position);
 
+
+        if (thingList.get(position).getLabel().equals("Sengled Bulb")){
+
+            holder.imageView.setImageResource(R.drawable.idea);
+        }
+
+        else if (thingList.get(position).getLabel().equals("orvibo steel")){
+
+            holder.imageView.setImageResource(R.drawable.switch_on);
+        }
+
+        else if (thingList.get(position).getLabel().equals("Breez Office")){
+
+            holder.imageView.setImageResource(R.drawable.thewalllamp);
+        }
+
+        else {
+
+            holder.imageView.setImageResource(R.drawable.lamp);
+        }
+
+
         holder.textView.setText(thing.getLabel());
                 holder.textView.setOnClickListener(new View.OnClickListener() {
                     @Override

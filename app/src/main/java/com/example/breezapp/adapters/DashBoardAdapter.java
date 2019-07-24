@@ -47,7 +47,7 @@ public class                                                                    
 
         else if (thingList.get(position).getLabel().equals("Basheer")){
 
-            holder.imageView.setImageResource(R.drawable.dimmer);
+            holder.imageView.setImageResource(R.drawable.switch_on);
         }
 
         else if (thingList.get(position).getLabel().equals("Yaseen")){
