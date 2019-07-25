@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="133dp"
+    android:layout_height="122dp"
+    android:background="#EFF9F8">
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
@@ -12,7 +20,8 @@ android:padding="6dp"
 app:cardCornerRadius="5dp"
 app:cardElevation="5dp"
 app:cardMaxElevation="8dp"
-app:cardUseCompatPadding="true">
+app:cardUseCompatPadding="true"
+    tools:ignore="MissingConstraints">
 
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,3 +49,5 @@ app:cardUseCompatPadding="true">
 
 
 </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
