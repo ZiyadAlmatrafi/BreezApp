@@ -112,7 +112,6 @@ public class SignInFragment extends Fragment {
                     Log.e("responce",response.code()+"");
                    // Log.e("responce",response.body()+"");
                     if (response.code() == 200) {
-                     Toast.makeText(getContext(), "Go Login", Toast.LENGTH_SHORT).show();
                         User user = new User(username,password);
                         SharedPrefManager.getInstance(getContext())
                                 .saveUser(user);

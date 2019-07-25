@@ -38,7 +38,25 @@ public class RoomDevicesAdapter extends RecyclerView.Adapter<RoomDevicesAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Thing thing = devicesList.get(position);
+        if (devicesList.get(position).getLabel().equals("Sengled Bulb")){
 
+            holder.imageView.setImageResource(R.drawable.idea);
+        }
+
+        else if (devicesList.get(position).getLabel().equals("orvibo steel")){
+
+            holder.imageView.setImageResource(R.drawable.switch_on);
+        }
+
+        else if (devicesList.get(position).getLabel().equals("Breez Office")){
+
+            holder.imageView.setImageResource(R.drawable.desk);
+        }
+
+        else {
+
+            holder.imageView.setImageResource(R.drawable.lamp);
+        }
         holder.textView.setText(thing.getLabel());
         //holder.imageView.setImageResource(mDevice[position].getImg());
 
