@@ -43,8 +43,7 @@ public interface APIService {
 
    @POST("/rest/items/{itemname}")
   // @Headers("Content-Type: text/plain")
-
-   Call<String> postItem(@Path ("itemname")String itemName, @Body String state);
+   Call<Void> postItem(@Path ("itemname")String itemName, @Body String state);
 
 
 

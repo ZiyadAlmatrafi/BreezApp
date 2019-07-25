@@ -15,6 +15,8 @@ import com.example.breezapp.models.Item;
 import com.example.breezapp.rest.RestItem;
 import com.example.breezapp.rest.RestThing;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,21 +123,22 @@ public class ItemActivity extends AppCompatActivity {
        // Log.e("Response POST", "Response state: " + state);
        // Log.e("Response POST", "Response state: " + RestThing.getInstance().getApi().postItem(itemname,state));
 
-        Call<String> voidCall = RestItem.getInstance().getApi().postItem(itemName,"ON");
+        Call<Void> voidCall = RestItem.getInstance().getApi().postItem(itemName,"ON");
         Log.e("Response POST", "Response item: " + itemName);
         Log.e("Response POST", "Response state: " + state);
-        voidCall.enqueue(new Callback<String>() {
+        voidCall.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
 
                 Log.e("Response POST", "Response code: " + response.code());
                 Log.e("Response POST", "Response mess: " + response.headers());
+                Log.e("Response POST", "Response suc: " +  response.isSuccessful());
 
 
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
                 Log.e("Response POST", "Error");
 
             }

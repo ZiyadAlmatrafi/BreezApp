@@ -31,7 +31,7 @@ public class RestItem {
 
                                         .addHeader("Authorization", AUTH)
                                        // .addHeader("Content-Type", AUT)
-                                        .addHeader("Content-Type", "text/plain; charset=utf-8")
+                                       // .addHeader("Content-Type", "text/plain; charset=utf-8")
                                         //.addHeader("Accept", AU)
                                         .method(original.method(), original.body());
 
