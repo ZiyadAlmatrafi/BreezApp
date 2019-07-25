@@ -37,7 +37,7 @@ public class ItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item);
         textView = (TextView)findViewById(R.id.item_id);
         aSwitch = (Switch) findViewById(R.id.switch_item);
-
+        textView.setText("Switch");
         Intent intent = getIntent();
         Bundle bundle;
         bundle =  getIntent().getExtras();
@@ -70,15 +70,15 @@ public class ItemActivity extends AppCompatActivity {
                            // Log.e("Response 2555", "Response code: " +item.get(i).getName() );
                             if(name.equalsIgnoreCase(item.get(i).getName() )){
                               //  Log.e("Item Activity", "Response: " +item.get(i).getLink() );
-                                textView.setText(item.get(i).getLabel());
+                              //  textView.setText(item.get(i).getLabel());
 
-                                ite = new Item();
+                                /*ite = new Item();
                                 ite.setName(item.get(i).getName());
                                 ite.setLink(item.get(i).getLink());
                                 ite.setState(item.get(i).getState());
                                 ite.setType(item.get(i).getType());
                                 ite.setCategory(item.get(i).getCategory());
-                                ite.setLabel(item.get(i).getLabel());
+                                ite.setLabel(item.get(i).getLabel());*/
 
                                // itemList.add(ite);
                                 itemName =item.get(i).getName();
@@ -114,18 +114,19 @@ public class ItemActivity extends AppCompatActivity {
             }
         });
     }
+
     public void post(String itemName,String state){
 
       //  Log.e("Response POST", "Response item: " + itemname);
        // Log.e("Response POST", "Response state: " + state);
        // Log.e("Response POST", "Response state: " + RestThing.getInstance().getApi().postItem(itemname,state));
 
-        Call<Void> voidCall = RestItem.getInstance().getApi().postItem(itemName,"ON");
+        Call<String> voidCall = RestItem.getInstance().getApi().postItem(itemName,"ON");
         Log.e("Response POST", "Response item: " + itemName);
         Log.e("Response POST", "Response state: " + state);
-        voidCall.enqueue(new Callback<Void>() {
+        voidCall.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(Call<String> call, Response<String> response) {
 
                 Log.e("Response POST", "Response code: " + response.code());
                 Log.e("Response POST", "Response mess: " + response.headers());
@@ -134,7 +135,7 @@ public class ItemActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
                 Log.e("Response POST", "Error");
 
             }

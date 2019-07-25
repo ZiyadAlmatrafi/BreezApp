@@ -60,8 +60,6 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
         else if((thingList.get(position).getLabel().equals("Z-Wave Serial Controller"))) {
 
             holder.imageView.setImageResource(R.drawable.controls);
-        }else{
-
         }
 
 
