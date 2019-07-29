@@ -58,7 +58,6 @@ public class RoomDevicesAdapter extends RecyclerView.Adapter<RoomDevicesAdapter.
             holder.imageView.setImageResource(R.drawable.lamp);
         }
         holder.textView.setText(thing.getLabel());
-        //holder.imageView.setImageResource(mDevice[position].getImg());
 
     }
 

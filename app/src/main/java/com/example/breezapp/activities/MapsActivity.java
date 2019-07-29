@@ -42,7 +42,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleApiClient googleApiClient;
     TextView the_address;
 
-    //public static final String MY_PREFS="com.example.breezapp.activities.Address";
 
 
 

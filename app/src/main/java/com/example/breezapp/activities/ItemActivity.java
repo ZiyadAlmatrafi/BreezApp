@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.breezapp.R;
 import com.example.breezapp.models.Item;
+import com.example.breezapp.rest.APIService;
 import com.example.breezapp.rest.RestItem;
 import com.example.breezapp.rest.RestThing;
 
@@ -20,9 +22,13 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 import retrofit2.http.Path;
 
 public class ItemActivity extends AppCompatActivity {
@@ -39,7 +45,7 @@ public class ItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item);
         textView = (TextView)findViewById(R.id.item_id);
         aSwitch = (Switch) findViewById(R.id.switch_item);
-        textView.setText("Switch");
+        //textView.setText("Switch");
         Intent intent = getIntent();
         Bundle bundle;
         bundle =  getIntent().getExtras();
@@ -61,28 +67,15 @@ public class ItemActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
-                //  Log.e("Response 1", "Response code: " + response.code());
 
                 if (response.isSuccessful()) {
-                   // progressDoalog.dismiss();
-                   // Log.e("Response 2", "Response code: " + response.body().size());
-                    Item ite;
+
                     item = response.body();
                         for(int i = 0 ; i <item.size();i++){
-                           // Log.e("Response 2555", "Response code: " +item.get(i).getName() );
                             if(name.equalsIgnoreCase(item.get(i).getName() )){
-                              //  Log.e("Item Activity", "Response: " +item.get(i).getLink() );
-                              //  textView.setText(item.get(i).getLabel());
+                                textView.setText(item.get(i).getLabel());
 
-                                /*ite = new Item();
-                                ite.setName(item.get(i).getName());
-                                ite.setLink(item.get(i).getLink());
-                                ite.setState(item.get(i).getState());
-                                ite.setType(item.get(i).getType());
-                                ite.setCategory(item.get(i).getCategory());
-                                ite.setLabel(item.get(i).getLabel());*/
 
-                               // itemList.add(ite);
                                 itemName =item.get(i).getName();
 
                                 if (aSwitch.isChecked()){
@@ -106,43 +99,37 @@ public class ItemActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Item>> call, Throwable t) {
-             //   progressDoalog.dismiss();
 
                 Toast.makeText(getApplicationContext(), " Error connecting to the server.. Try Again later", Toast.LENGTH_SHORT).show();
 
 
-               // response();
 
             }
         });
     }
 
     public void post(String itemName,String state){
+        // Need to put this methoed in AsycnTask in future
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
-      //  Log.e("Response POST", "Response item: " + itemname);
-       // Log.e("Response POST", "Response state: " + state);
-       // Log.e("Response POST", "Response state: " + RestThing.getInstance().getApi().postItem(itemname,state));
+        StrictMode.setThreadPolicy(policy);
 
-        Call<Void> voidCall = RestItem.getInstance().getApi().postItem(itemName,"ON");
-        Log.e("Response POST", "Response item: " + itemName);
-        Log.e("Response POST", "Response state: " + state);
-        voidCall.enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+        RequestBody requestBody = RequestBody.create(MediaType.parse("text/plain"),state);
+        Call<ResponseBody> voidCall = RestItem.getInstance().getApi().lastTest(itemName,requestBody);
 
-                Log.e("Response POST", "Response code: " + response.code());
-                Log.e("Response POST", "Response mess: " + response.headers());
-                Log.e("Response POST", "Response suc: " +  response.isSuccessful());
+        try {
+            Response<ResponseBody> response = voidCall.execute();
+            if (response.isSuccessful()){
+                int strRes = response.code();
+                 Log.e("Response 2", "Response code: " +strRes);
 
 
             }
 
-            @Override
-            public void onFailure(Call<Void> call, Throwable t) {
-                Log.e("Response POST", "Error");
+        } catch (Exception e){
+            Log.e("Response 2", "Response code: " +e);
+        }
 
-            }
-        });
 
     }
 

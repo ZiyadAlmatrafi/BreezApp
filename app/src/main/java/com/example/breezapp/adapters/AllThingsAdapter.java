@@ -75,9 +75,7 @@ public class AllThingsAdapter extends RecyclerView.Adapter<AllThingsAdapter.View
                         context.startActivity(intent);
                     }
                 });
-                /*for (int i =0 ; i< thingList.size(); i++) {
-                    Log.e("Error",+i+ " " + thingList.get(i).getUID());
-                }*/
+
 
     }
 

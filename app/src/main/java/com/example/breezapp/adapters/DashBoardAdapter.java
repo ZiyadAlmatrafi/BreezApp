@@ -16,7 +16,6 @@ import com.example.breezapp.models.Thing;
 import java.util.List;
 
 public class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.ViewHolder> {
-   // private ArrayList<Thing> thingList;
 
     private List<Thing> thingList;
     Context context;
@@ -61,7 +60,6 @@ public class                                                                    
         }
 
         holder.textView.setText(thing.getLabel());
-        //holder.imageView.setImageResource(mDevice[position].getImg());
 
 
     }

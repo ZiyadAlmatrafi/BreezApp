@@ -10,6 +10,8 @@ import com.example.breezapp.models.Thing;
 
 import java.util.List;
 
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -44,6 +46,9 @@ public interface APIService {
    @POST("/rest/items/{itemname}")
   // @Headers("Content-Type: text/plain")
    Call<Void> postItem(@Path ("itemname")String itemName, @Body String state);
+
+    @POST("/rest/items/{itemname}")
+    Call<ResponseBody> lastTest(@Path ("itemname")String itemName,@Body RequestBody requestBody);
 
 
 
